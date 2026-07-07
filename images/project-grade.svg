@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="gradSky" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#38BDF8" />
+    </linearGradient>
+    <linearGradient id="gradIndigo" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#818CF8" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  
+  <!-- Outer Dashboard Frame -->
+  <rect x="40" y="40" width="520" height="320" rx="12" fill="#0F172A" stroke="rgba(255, 255, 255, 0.06)" stroke-width="2"/>
+  
+  <!-- Top bar -->
+  <rect x="40" y="40" width="520" height="40" rx="12" fill="#1E293B" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+  <circle cx="65" cy="60" r="5" fill="#EF4444"/>
+  <circle cx="80" cy="60" r="5" fill="#F59E0B"/>
+  <circle cx="95" cy="60" r="5" fill="#10B981"/>
+  <text x="300" y="65" fill="#E2E8F0" font-family="Poppins, sans-serif" font-size="13" text-anchor="middle" font-weight="bold">Student Grade Analytics</text>
+
+  <!-- Left Sidebar / Stats Cards -->
+  <rect x="60" y="100" width="160" height="70" rx="8" fill="#1E293B" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <text x="75" y="125" fill="#94A3B8" font-family="Poppins, sans-serif" font-size="10">AVERAGE CGPA</text>
+  <text x="75" y="155" fill="#38BDF8" font-family="Poppins, sans-serif" font-size="24" font-weight="bold">9.24</text>
+  
+  <rect x="60" y="185" width="160" height="70" rx="8" fill="#1E293B" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <text x="75" y="210" fill="#94A3B8" font-family="Poppins, sans-serif" font-size="10">TOTAL STUDENTS</text>
+  <text x="75" y="240" fill="#818CF8" font-family="Poppins, sans-serif" font-size="24" font-weight="bold">148</text>
+
+  <!-- Student List (Right side) -->
+  <rect x="240" y="100" width="300" height="155" rx="8" fill="#1E293B" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <text x="255" y="125" fill="#E2E8F0" font-family="Poppins, sans-serif" font-size="11" font-weight="bold">Top Performing Students</text>
+  
+  <!-- Row 1 -->
+  <rect x="255" y="140" width="270" height="25" rx="4" fill="#0F172A" opacity="0.6"/>
+  <circle cx="270" cy="152" r="8" fill="#38BDF8"/>
+  <text x="270" y="155" fill="#0F172A" font-family="Poppins, sans-serif" font-size="9" font-weight="bold" text-anchor="middle">H</text>
+  <text x="290" y="156" fill="#E2E8F0" font-family="Poppins, sans-serif" font-size="10">Harshita Pal</text>
+  <rect x="440" y="145" width="30" height="15" rx="3" fill="#059669"/>
+  <text x="455" y="156" fill="#FFFFFF" font-family="Poppins, sans-serif" font-size="9" font-weight="bold" text-anchor="middle">A+</text>
+  <text x="505" y="156" fill="#38BDF8" font-family="Poppins, sans-serif" font-size="10" font-weight="bold">9.8</text>
+
+  <!-- Row 2 -->
+  <rect x="255" y="170" width="270" height="25" rx="4" fill="#0F172A" opacity="0.3"/>
+  <circle cx="270" cy="182" r="8" fill="#818CF8"/>
+  <text x="270" y="185" fill="#0F172A" font-family="Poppins, sans-serif" font-size="9" font-weight="bold" text-anchor="middle">A</text>
+  <text x="290" y="186" fill="#E2E8F0" font-family="Poppins, sans-serif" font-size="10">Amit Sharma</text>
+  <rect x="440" y="175" width="30" height="15" rx="3" fill="#059669"/>
+  <text x="455" y="186" fill="#FFFFFF" font-family="Poppins, sans-serif" font-size="9" font-weight="bold" text-anchor="middle">A+</text>
+  <text x="505" y="186" fill="#818CF8" font-family="Poppins, sans-serif" font-size="10" font-weight="bold">9.5</text>
+
+  <!-- Row 3 -->
+  <rect x="255" y="200" width="270" height="25" rx="4" fill="#0F172A" opacity="0.3"/>
+  <circle cx="270" cy="212" r="8" fill="#E2E8F0"/>
+  <text x="270" y="215" fill="#0F172A" font-family="Poppins, sans-serif" font-size="9" font-weight="bold" text-anchor="middle">R</text>
+  <text x="290" y="216" fill="#E2E8F0" font-family="Poppins, sans-serif" font-size="10">Rohan Das</text>
+  <rect x="440" y="205" width="30" height="15" rx="3" fill="#0284C7"/>
+  <text x="455" y="216" fill="#FFFFFF" font-family="Poppins, sans-serif" font-size="9" font-weight="bold" text-anchor="middle">A</text>
+  <text x="505" y="216" fill="#E2E8F0" font-family="Poppins, sans-serif" font-size="10" font-weight="bold">9.1</text>
+
+  <!-- Bottom Bar Chart / Grade Distribution -->
+  <rect x="60" y="270" width="480" height="75" rx="8" fill="#1E293B" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <text x="75" y="290" fill="#94A3B8" font-family="Poppins, sans-serif" font-size="9" font-weight="bold">GRADE DISTRIBUTION</text>
+  
+  <!-- Bar O -->
+  <rect x="180" y="300" width="25" height="30" rx="3" fill="url(#gradSky)"/>
+  <text x="192.5" y="295" fill="#38BDF8" font-family="Poppins, sans-serif" font-size="8" text-anchor="middle">42%</text>
+  <text x="192.5" y="342" fill="#94A3B8" font-family="Poppins, sans-serif" font-size="8" text-anchor="middle">O</text>
+  
+  <!-- Bar A+ -->
+  <rect x="230" y="285" width="25" height="45" rx="3" fill="url(#gradIndigo)"/>
+  <text x="242.5" y="280" fill="#818CF8" font-family="Poppins, sans-serif" font-size="8" text-anchor="middle">55%</text>
+  <text x="242.5" y="342" fill="#94A3B8" font-family="Poppins, sans-serif" font-size="8" text-anchor="middle">A+</text>
+
+  <!-- Bar A -->
+  <rect x="280" y="295" width="25" height="35" rx="3" fill="url(#gradSky)"/>
+  <text x="292.5" y="290" fill="#38BDF8" font-family="Poppins, sans-serif" font-size="8" text-anchor="middle">38%</text>
+  <text x="292.5" y="342" fill="#94A3B8" font-family="Poppins, sans-serif" font-size="8" text-anchor="middle">A</text>
+
+  <!-- Bar B+ -->
+  <rect x="330" y="310" width="25" height="20" rx="3" fill="#475569"/>
+  <text x="342.5" y="305" fill="#E2E8F0" font-family="Poppins, sans-serif" font-size="8" text-anchor="middle">18%</text>
+  <text x="342.5" y="342" fill="#94A3B8" font-family="Poppins, sans-serif" font-size="8" text-anchor="middle">B+</text>
+</svg>

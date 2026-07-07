@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- Primary Meta Tags -->
+  <title>Cloud Specialist Portfolio</title>
+  <meta name="title" content="Harshita pal | MERN Stack &amp; Cloud Specialist Portfolio">
+  <meta name="description" content="Portfolio of Harshita pal, a 3rd-Year B.Tech Student at IILM University specializing in Cloud Computing, MERN Stack, Java, and AWS. Discover projects, skills, certifications, and contact details.">
+  <meta name="keywords" content="Harshita pal, MERN stack Developer, React.js, Node.js, AWS, Cloud Computing, Portfolio, Cloud Resume, Developer, B.Tech student, IILM University">
+  <meta name="author" content="Harshita pal">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://harshitapal.dev/">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://harshitapal.dev/">
+  <meta property="og:title" content="Harshita pal | MERN Stack &amp; Cloud Specialist Portfolio">
+  <meta property="og:description" content="Explore the portfolio of Harshita pal: B.Tech Cloud Computing Student, MERN Stack Developer, and AWS Enthusiast.">
+  <meta property="og:image" content="images/profile.svg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://harshitapal.dev/">
+  <meta property="twitter:title" content="Harshita pal | MERN Stack &amp; Cloud Specialist Portfolio">
+  <meta property="twitter:description" content="Explore the portfolio of Harshita pal: B.Tech Cloud Computing Student, MERN Stack Developer, and AWS Enthusiast.">
+  <meta property="twitter:image" content="images/profile.svg">
+
+  <!-- DNS-Prefetch & Preconnect for CDN resources -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="css/style.css" as="style">
+  <link rel="preload" href="images/profile.svg" as="image" type="image/svg+xml" fetchpriority="high">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Custom JavaScript (Deferred for optimal FCP/DOMContentLoaded) -->
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader" class="loader-overlay" aria-hidden="true">
+    <div class="loader-spinner">
+      <div class="spinner-ring"></div>
+      <span class="loader-text">Loading Portfolio...</span>
+    </div>
+  </div>
+
+  <!-- Ambient Animated Background Elements -->
+  <div class="ambient-bg">
+    <div class="glow-circle glow-1"></div>
+    <div class="glow-circle glow-2"></div>
+    <div class="glow-circle glow-3"></div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#home" class="logo" aria-label="Harshita pal Home">
+        <span class="logo-accent">&lt;</span>Harshita<span class="logo-accent">.</span>pal<span class="logo-accent"> /&gt;</span>
+      </a>
+      
+      <nav class="nav" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+          <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+          <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+          <li class="nav-item"><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light and dark theme" title="Toggle theme">
+          <i class="fa-solid fa-moon moon-icon" aria-hidden="true"></i>
+          <i class="fa-solid fa-sun sun-icon" aria-hidden="true"></i>
+        </button>
+        
+        <!-- Mobile Hamburger Menu Button -->
+        <button class="hamburger" id="hamburger-menu" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle mobile menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="section hero-section">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="hero-welcome">Welcome to my Cloud Space</span>
+          <h1 class="hero-title">
+            Hi, I'm <span class="text-gradient">Harshita pal</span>
+          </h1>
+          <h2 class="hero-subtitle" aria-live="polite">
+            I am a <span id="typing-text" class="text-accent"></span><span class="typed-cursor">|</span>
+          </h2>
+          <p class="hero-description">
+            Final Year B.Tech Cloud Computing student with hands-on experience in MERN stack development, API integration, and Figma UI/UX designs.
+          </p>
+          <div class="hero-ctas">
+            <a href="assets/Harshita pal - Resume (1).pdf" class="btn btn-primary" download aria-label="Download Harshita pal's Resume PDF">
+              <i class="fa-solid fa-arrow-down-to-line" aria-hidden="true"></i> Download Resume
+            </a>
+            <a href="#contact" class="btn btn-secondary" aria-label="Scroll to contact section">
+              Contact Me <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div class="hero-socials">
+            <a href="https://github.com/EngHarshita" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub Profile">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://linkedin.com/in/harshita-pal-4a1a08287" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+            <a href="mailto:harshitapal5678@gmail.com" class="social-link" aria-label="Send Email">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="avatar-wrapper">
+            <img src="images/profile.svg" alt="Harshita Pal Avatar Illustration" class="avatar-img" loading="eager" width="300" height="300" fetchpriority="high" decoding="async">
+            <div class="avatar-backdrop"></div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator" aria-hidden="true">
+        <a href="#about" aria-label="Scroll down to About section">
+          <span class="mouse-icon">
+            <span class="mouse-wheel"></span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section scroll-reveal">
+      <div class="container">
+        <h2 class="section-title text-center"><span class="text-gradient">About Me</span></h2>
+        <div class="section-underline"></div>
+        
+        <div class="about-grid">
+          <div class="about-visual">
+            <div class="glass-card about-image-card">
+              <div class="terminal-header">
+                <span class="terminal-dot dot-red"></span>
+                <span class="terminal-dot dot-yellow"></span>
+                <span class="terminal-dot dot-green"></span>
+                <span class="terminal-title">developer.java</span>
+              </div>
+              <pre class="terminal-body"><code class="code-block"><span class="code-keyword">package</span> com.harshita.profile;
+
+<span class="code-keyword">public class</span> <span class="code-class">Developer</span> {
+  <span class="code-keyword">private</span> String name = <span class="code-string">"Harshita pal"</span>;
+  <span class="code-keyword">private</span> String role = <span class="code-string">"Final Year B.Tech Student (Cloud Computing)"</span>;
+  <span class="code-keyword">private</span> String[] stack = {<span class="code-string">"React.js"</span>, <span class="code-string">"Node.js"</span>, <span class="code-string">"Java"</span>, <span class="code-string">"AWS"</span>, <span class="code-string">"Figma"</span>};
+  <span class="code-keyword">private</span> boolean lovesCloud = <span class="code-keyword">true</span>;
+
+  <span class="code-keyword">public void</span> buildFuture() {
+    System.out.println(<span class="code-string">"Deploying full-stack MERN &amp; cloud systems..."</span>);
+  }
+}</code></pre>
+            </div>
+          </div>
+          
+          <div class="about-content">
+            <h3 class="about-subtitle">Final Year B.Tech Student &amp; Cloud Specialist</h3>
+            <p class="about-text">
+              I am a motivated Final Year B.Tech student specializing in <strong>Cloud Computing</strong>, with hands-on experience in the <strong>MERN stack</strong> (MongoDB, Express.js, React.js, Node.js). My focus is on combining web application development with solid cloud infrastructure capabilities.
+            </p>
+            <p class="about-text">
+              I am skilled in API integration, UI/UX designing using Figma, and version control using Git/GitHub. I am eager to apply my technical knowledge in real-world environments to contribute to impactful software engineering projects.
+            </p>
+            <h3 class="about-subtitle">Career Objective</h3>
+            <p class="about-text">
+              To secure a challenging internship or junior developer role in full-stack MERN development or Cloud Solutions engineering, utilizing my skills in web development, Figma designing, and AWS/GCP services to deliver reliable cloud-native applications.
+            </p>
+            
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <i class="fa-solid fa-graduation-cap highlight-icon" aria-hidden="true"></i>
+                <div>
+                  <span class="highlight-title">Education</span>
+                  <span class="highlight-desc">B.Tech - CSE (Cloud Computing)</span>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-network-wired highlight-icon" aria-hidden="true"></i>
+                <div>
+                  <span class="highlight-title">Focus Areas</span>
+                  <span class="highlight-desc">MERN Stack &amp; Cloud Architecting</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section scroll-reveal">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 3rem;">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
+            <i class="fa-solid fa-cloud-arrow-up" style="font-size: 2rem; color: var(--accent-primary);" aria-hidden="true"></i>
+            <h2 class="section-title" style="margin-bottom: 0; font-size: 2.25rem;"><span class="text-gradient">Skills</span></h2>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 1.1rem; margin-top: 0.25rem;">Technologies and tools I work with</p>
+        </div>
+        
+        <div class="bento-grid">
+          <!-- Card 1: Cloud Infrastructure -->
+          <div class="glass-card bento-card">
+            <div class="skill-header-wrapper">
+              <div class="skill-header">
+                <i class="fa-solid fa-cloud-arrow-up skill-category-icon" aria-hidden="true"></i>
+                <h3 class="skill-category-title">Cloud Infrastructure</h3>
+              </div>
+              <p class="skill-desc">Serverless architecture provisioning, edge delivery, and DNS routing.</p>
+            </div>
+            <div class="skill-tags-group">
+              <div class="skill-tag-pill"><i class="fa-brands fa-aws aws-color" aria-hidden="true"></i> AWS</div>
+              <div class="skill-tag-pill"><i class="fa-solid fa-cloud-sun route-color" aria-hidden="true"></i> CloudFront</div>
+              <div class="skill-tag-pill"><i class="fa-solid fa-cubes aws-color" aria-hidden="true"></i> AWS Lambda</div>
+              <div class="skill-tag-pill"><i class="fa-solid fa-database mysql-color" aria-hidden="true"></i> DynamoDB</div>
+              <div class="skill-tag-pill"><i class="fa-solid fa-network-wired route-color" aria-hidden="true"></i> Route 53</div>
+              <div class="skill-tag-pill"><i class="fa-solid fa-globe route-color" aria-hidden="true"></i> GCP foundations</div>
+            </div>
+          </div>
+
+          <!-- Card 2: Design -->
+          <div class="glass-card bento-card">
+            <div class="skill-header-wrapper">
+              <div class="skill-header">
+                <i class="fa-solid fa-palette skill-category-icon" aria-hidden="true"></i>
+                <h3 class="skill-category-title">Design</h3>
+              </div>
+              <p class="skill-desc">Figma layout construction and responsive interface systems.</p>
+            </div>
+            <div class="skill-tags-group">
+              <div class="skill-tag-pill"><i class="fa-brands fa-figma general-badge-color" style="color:#F24E1E;" aria-hidden="true"></i> Figma</div>
+              <div class="skill-tag-pill"><i class="fa-solid fa-pen-nib route-color" aria-hidden="true"></i> Wireframing</div>
+              <div class="skill-tag-pill"><i class="fa-solid fa-crop general-badge-color" aria-hidden="true"></i> Prototyping</div>
+            </div>
+          </div>
+
+          <!-- Card 3: Professional Toolkit & Collaboration -->
+          <div class="glass-card bento-card">
+            <div class="skill-header-wrapper">
+              <div class="skill-header">
+                <i class="fa-solid fa-toolbox skill-category-icon" aria-hidden="true"></i>
+                <h3 class="skill-category-title">Professional Toolkit &amp; Collaboration</h3>
+              </div>
+              <p class="skill-desc">Development tools, diagnostic environments, and software methodologies.</p>
+            </div>
+            <div class="skill-tags-group">
+              <div class="skill-tag-pill"><i class="fa-brands fa-git-alt git-color" aria-hidden="true"></i> Git &amp; GitHub</div>
+              <div class="skill-tag-pill"><i class="fa-solid fa-laptop-code api-color" aria-hidden="true"></i> VS Code &amp; IntelliJ</div>
+              <div class="skill-tag-pill"><i class="fa-solid fa-envelope vscode-color" aria-hidden="true"></i> Postman</div>
+              <div class="skill-tag-pill"><i class="fa-solid fa-fire html-color" aria-hidden="true"></i> Firebase</div>
+              <div class="skill-tag-pill"><i class="fa-solid fa-circle-check spring-color" aria-hidden="true"></i> Problem Solving</div>
+              <div class="skill-tag-pill"><i class="fa-solid fa-users route-color" aria-hidden="true"></i> Team Collaboration</div>
+              <div class="skill-tag-pill"><i class="fa-solid fa-check-double general-badge-color" aria-hidden="true"></i> OOPs Concepts</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience-section scroll-reveal">
+      <div class="container">
+        <h2 class="section-title text-center"><span class="text-gradient">Professional Experience</span></h2>
+        <div class="section-underline"></div>
+        
+        <div class="timeline">
+          <!-- Item 1: SGCA Technologies -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Nov 2025 - Feb 2026</div>
+            <div class="glass-card timeline-card">
+              <h3 class="timeline-title">UI/UX Designer Intern</h3>
+              <h4 class="timeline-subtitle">SGCA Technologies</h4>
+              <p class="timeline-text">
+                - Gained hands-on experience with Figma for real-world design projects.<br>
+                - Developed and refined interface designing skills through responsive web prototypes.<br>
+                - Utilized Figma to design visually appealing user interfaces and improve UX workflows.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2: Code Alpha -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Jun 2025 - Jul 2025</div>
+            <div class="glass-card timeline-card">
+              <h3 class="timeline-title">Java Programming Intern</h3>
+              <h4 class="timeline-subtitle">Code Alpha (Virtual Internship)</h4>
+              <p class="timeline-text">
+                - Gained hands-on experience in backend development through real-world project scenarios.<br>
+                - Developed and tested an interactive Student Grade Tracker using OOP principles in Java.<br>
+                - Designed and implemented a console-based hotel reservation backend management system.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education-section scroll-reveal">
+      <div class="container">
+        <h2 class="section-title text-center"><span class="text-gradient">Education History</span></h2>
+        <div class="section-underline"></div>
+        
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">Jun 2023 - June 2027</div>
+            <div class="glass-card timeline-card">
+              <h3 class="timeline-title">Bachelor of Technology - CSE (Cloud Computing)</h3>
+              <h4 class="timeline-subtitle">IILM University</h4>
+              <div class="education-meta">
+                <span class="edu-gpa"><i class="fa-solid fa-star" aria-hidden="true"></i> CGPA: 8.8 / 10.0</span>
+              </div>
+              <p class="timeline-text">
+                <strong>Relevant Focus:</strong> Cloud Architectures, Distributed Systems, Web Application Development, MERN Stack, Operating Systems, Database Management Systems, Figma UI designs, and Object-Oriented Systems.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section scroll-reveal">
+      <div class="container">
+        <h2 class="section-title text-center"><span class="text-gradient">Featured Projects</span></h2>
+        <div class="section-underline"></div>
+        
+        <div class="projects-grid">
+          <!-- Project 1: Delhi Noida Heritage System -->
+          <article class="glass-card project-card">
+            <div class="project-image-wrapper">
+              <img src="images/project-hotel.svg" alt="Delhi Noida Heritage System Mockup" class="project-img" loading="lazy" width="400" height="200">
+              <div class="project-badge">Web Platform</div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-card-title">Delhi Noida Heritage System</h3>
+              <p class="project-card-desc">
+                Embark on an enriching journey traversing ancient monuments, historical landmarks, and cultural treasures, guided expertly to unveil stories woven through time.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">Supabase</span>
+                <span class="tech-tag">Netlify</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/EngHarshita" target="_blank" rel="noopener noreferrer" class="btn btn-icon btn-secondary" aria-label="GitHub Repository for Delhi Noida Heritage System">
+                  <i class="fa-brands fa-github" aria-hidden="true"></i> Repo
+                </a>
+                <a href="#" class="btn btn-icon btn-primary project-demo-btn" data-project="Delhi Noida Heritage System" aria-label="Live Demo for Delhi Noida Heritage System">
+                  <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: MERN Chat & Video Call App -->
+          <article class="glass-card project-card">
+            <div class="project-image-wrapper">
+              <img src="images/project-chat.svg" alt="MERN Chat & Video Call App UI Mockup" class="project-img" loading="lazy" width="400" height="200">
+              <div class="project-badge">Full Stack</div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-card-title">MERN Real-Time Chat &amp; Video Call App</h3>
+              <p class="project-card-desc">
+                Built a full-stack real-time communication platform with features like instant messaging, video calling (WebRTC), JWT authentication, cloud file sharing, and multi-device support. Deployed with production-ready scalability.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Express.js</span>
+                <span class="tech-tag">React.js</span>
+                <span class="tech-tag">Socket.io</span>
+                <span class="tech-tag">WebRTC</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/EngHarshita" target="_blank" rel="noopener noreferrer" class="btn btn-icon btn-secondary" aria-label="GitHub Repository for MERN Chat App">
+                  <i class="fa-brands fa-github" aria-hidden="true"></i> Repo
+                </a>
+                <a href="#" class="btn btn-icon btn-primary project-demo-btn" data-project="MERN Chat Application" aria-label="Live Demo for MERN Chat App">
+                  <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Hotel Reservation System -->
+          <article class="glass-card project-card">
+            <div class="project-image-wrapper">
+              <img src="images/project-erp.svg" alt="Hotel Reservation System visual mockup" class="project-img" loading="lazy" width="400" height="200">
+              <div class="project-badge">Java Programming</div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-card-title">Hotel Reservation System</h3>
+              <p class="project-card-desc">
+                Designed and implemented a comprehensive hotel reservation system using Java programming, demonstrating Object-Oriented Programming (OOPs) concepts for efficient development.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">OOPs</span>
+                <span class="tech-tag">Console/Swing</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/EngHarshita" target="_blank" rel="noopener noreferrer" class="btn btn-icon btn-secondary" aria-label="GitHub Repository for Hotel Reservation System">
+                  <i class="fa-brands fa-github" aria-hidden="true"></i> Repo
+                </a>
+                <a href="#" class="btn btn-icon btn-primary project-demo-btn" data-project="Hotel Management System" aria-label="Live Demo for Hotel Reservation System">
+                  <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Student Grade Tracker -->
+          <article class="glass-card project-card">
+            <div class="project-image-wrapper">
+              <img src="images/project-grade.svg" alt="Student Grade Tracker visual mockup" class="project-img" loading="lazy" width="400" height="200">
+              <div class="project-badge">Java Programming</div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-card-title">Student Grade Tracker</h3>
+              <p class="project-card-desc">
+                Developed an interactive Student Grade Tracker using Java programming, enabling efficient data structures for average calculations and grade distributions.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">Java</span>
+                <span class="tech-tag">OOPs</span>
+                <span class="tech-tag">Data Structures</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/EngHarshita" target="_blank" rel="noopener noreferrer" class="btn btn-icon btn-secondary" aria-label="GitHub Repository for Student Grade Tracker">
+                  <i class="fa-brands fa-github" aria-hidden="true"></i> Repo
+                </a>
+                <a href="#" class="btn btn-icon btn-primary project-demo-btn" data-project="Student Grade Tracker" aria-label="Live Demo for Student Grade Tracker">
+                  <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Demo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: Cloud Resume Project -->
+          <article class="glass-card project-card">
+            <div class="project-image-wrapper">
+              <img src="images/project-resume.svg" alt="Cloud Resume Project AWS Architecture" class="project-img" loading="lazy" width="400" height="200">
+              <div class="project-badge">Cloud Architecture</div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-card-title">Cloud Resume Project</h3>
+              <p class="project-card-desc">
+                This personal portfolio website, engineered using modern serverless AWS architectures (S3, CloudFront, Route53, API Gateway, Lambda, and DynamoDB).
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">AWS S3</span>
+                <span class="tech-tag">CloudFront</span>
+                <span class="tech-tag">Route 53</span>
+                <span class="tech-tag">API Gateway &amp; Lambda</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/EngHarshita" target="_blank" rel="noopener noreferrer" class="btn btn-icon btn-secondary" aria-label="GitHub Repository for Cloud Resume Project">
+                  <i class="fa-brands fa-github" aria-hidden="true"></i> Repo
+                </a>
+                <a href="#" class="btn btn-icon btn-primary project-demo-btn" data-project="Cloud Resume Project" aria-label="Live Demo for Cloud Resume Project">
+                  <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Demo
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section certifications-section scroll-reveal">
+      <div class="container">
+        <h2 class="section-title text-center"><span class="text-gradient">Certifications</span></h2>
+        <div class="section-underline"></div>
+        
+        <div class="certifications-grid">
+          <!-- Cert 1 -->
+          <div class="glass-card cert-card">
+            <div class="cert-icon-wrapper">
+              <i class="fa-brands fa-aws cert-badge-icon aws-badge-color" aria-hidden="true"></i>
+            </div>
+            <div class="cert-info">
+              <h3 class="cert-title">AWS Academy Cloud Foundations</h3>
+              <p class="cert-issuer">AWS Academy (April 2025)</p>
+              <button class="btn btn-secondary btn-sm cert-verify-btn" data-cert="AWS Academy Cloud Foundations" aria-label="Verify AWS Academy Cloud Foundations certification">
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> View Certificate
+              </button>
+            </div>
+          </div>
+
+          <!-- Cert 2 -->
+          <div class="glass-card cert-card">
+            <div class="cert-icon-wrapper">
+              <i class="fa-solid fa-cloud-arrow-up cert-badge-icon aws-badge-color" aria-hidden="true"></i>
+            </div>
+            <div class="cert-info">
+              <h3 class="cert-title">AWS Cloud Architecting</h3>
+              <p class="cert-issuer">AWS Academy</p>
+              <button class="btn btn-secondary btn-sm cert-verify-btn" data-cert="AWS cloud Architecting" aria-label="Verify AWS Cloud Architecting certification">
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> View Certificate
+              </button>
+            </div>
+          </div>
+
+          <!-- Cert 3 -->
+          <div class="glass-card cert-card">
+            <div class="cert-icon-wrapper">
+              <i class="fa-solid fa-laptop-code cert-badge-icon general-badge-color" aria-hidden="true"></i>
+            </div>
+            <div class="cert-info">
+              <h3 class="cert-title">Accenture Nordics-Software Engineering Simulation</h3>
+              <p class="cert-issuer">Forage (April 2025)</p>
+              <button class="btn btn-secondary btn-sm cert-verify-btn" data-cert="Accenture Nordics Simulation" aria-label="Verify Accenture Nordics simulation certificate">
+                <i class="fa-solid fa-circle-check" aria-hidden="true"></i> View Certificate
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section scroll-reveal">
+      <div class="container">
+        <h2 class="section-title text-center"><span class="text-gradient">Get In Touch</span></h2>
+        <div class="section-underline"></div>
+        
+        <div class="contact-grid">
+          <div class="contact-info-panel">
+            <h3 class="contact-info-title">Let's discuss your next project!</h3>
+            <p class="contact-info-text">
+              I am open to backend roles, internship projects, and technical discussion. Drop me a line, and I will get back to you within 24 hours.
+            </p>
+            
+            <div class="contact-details">
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+                <div>
+                  <span class="detail-label">Location</span>
+                  <span class="detail-value">Greater Noida, India</span>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+                <div>
+                  <span class="detail-label">Email</span>
+                  <span class="detail-value"><a href="mailto:harshitapal5678@gmail.com">harshitapal5678@gmail.com</a></span>
+                </div>
+              </div>
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
+                <div>
+                  <span class="detail-label">Phone</span>
+                  <span class="detail-value"><a href="tel:7060322265">7060322265</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="glass-card contact-form-wrapper">
+            <!-- Alert Toast Message (Hidden by default) -->
+            <div id="form-feedback" class="form-feedback-alert" role="alert" aria-live="assertive"></div>
+            
+            <form id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="form-name">Name</label>
+                  <input type="text" id="form-name" name="name" required placeholder="John Doe" aria-required="true">
+                  <span class="form-error-msg" id="name-error">Please enter your name</span>
+                </div>
+                <div class="form-group">
+                  <label for="form-email">Email</label>
+                  <input type="email" id="form-email" name="email" required placeholder="john@example.com" aria-required="true">
+                  <span class="form-error-msg" id="email-error">Please enter a valid email address</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="form-subject">Subject</label>
+                <input type="text" id="form-subject" name="subject" required placeholder="Job Opportunity / Collab" aria-required="true">
+                <span class="form-error-msg" id="subject-error">Please enter a subject</span>
+              </div>
+              <div class="form-group">
+                <label for="form-message">Message</label>
+                <textarea id="form-message" name="message" rows="5" required placeholder="Hi Harshita, let's talk..." aria-required="true"></textarea>
+                <span class="form-error-msg" id="message-error">Please enter your message</span>
+              </div>
+              
+              <button type="submit" class="btn btn-primary btn-block">
+                Send Message <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <a href="#home" class="logo footer-logo">
+          <span class="logo-accent">&lt;</span>Harshita<span class="logo-accent">.</span>pal<span class="logo-accent"> /&gt;</span>
+        </a>
+        <p class="footer-tagline">Building full-stack MERN &amp; cloud systems.</p>
+      </div>
+      
+      <div class="footer-links-group">
+        <h3 class="footer-links-title">Quick Links</h3>
+        <ul class="footer-links-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-socials-group">
+        <h3 class="footer-links-title">Connect</h3>
+        <div class="footer-socials">
+          <a href="https://github.com/EngHarshita" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="GitHub">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="https://linkedin.com/in/harshita-pal-4a1a08287" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:harshitapal5678@gmail.com" class="footer-social-link" aria-label="Email">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p class="copyright">&copy; 2026 Harshita pal. All Rights Reserved. Cloud Resume Project.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Scroll back to top of the page">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- Interactive Project/Certificate Detail Modal (General Purpose Modal) -->
+  <div id="info-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
+    <div class="modal-content glass-card">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <h3 id="modal-title" class="text-gradient">Modal Title</h3>
+      </div>
+      <div class="modal-body" id="modal-body-content">
+        <!-- Interactive content injected dynamically -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>
