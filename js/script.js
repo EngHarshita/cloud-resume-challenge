@@ -31,22 +31,41 @@ const init = () => {
 
 
   // ==========================================================================
-  // 2. STICKY NAVBAR SCROLL ACTION (FLOATING INTERACTIVE BAR)
+  // 2. STICKY NAVBAR & BACK-TO-TOP THROTTLED SCROLL ACTION
   // ==========================================================================
   const header = document.querySelector('.header');
+  const backToTopBtn = document.getElementById('back-to-top');
   
-  const handleHeaderScroll = () => {
-    if (header) {
-      if (window.scrollY > 20) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+  let scrollScheduled = false;
+  const handleScroll = () => {
+    if (!scrollScheduled) {
+      scrollScheduled = true;
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        
+        if (header) {
+          if (scrollY > 20) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        }
+        
+        if (backToTopBtn) {
+          if (scrollY > 300) {
+            backToTopBtn.classList.add('show');
+          } else {
+            backToTopBtn.classList.remove('show');
+          }
+        }
+        
+        scrollScheduled = false;
+      });
     }
   };
   
-  window.addEventListener('scroll', handleHeaderScroll, { passive: true });
-  handleHeaderScroll(); // Run initially on load
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll(); // Run initially on load
 
 
   // ==========================================================================
@@ -75,6 +94,7 @@ const init = () => {
   // ==========================================================================
   const themeToggleBtn = document.getElementById('theme-toggle');
   const htmlElement = document.documentElement;
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 
   // Retrieve saved theme preference, or fall back to system preferences
   const getPreferredTheme = () => {
@@ -90,6 +110,10 @@ const init = () => {
   const setTheme = (theme) => {
     htmlElement.setAttribute('data-theme', theme);
     safeLocalStorage.setItem('theme', theme);
+    
+    if (themeColorMeta) {
+      themeColorMeta.setAttribute('content', theme === 'light' ? '#FBFAFC' : '#050F19');
+    }
     
     if (themeToggleBtn) {
       // Update theme toggle icon aria labels
@@ -227,19 +251,9 @@ const init = () => {
 
 
   // ==========================================================================
-  // 8. BACK TO TOP BUTTON
+  // 8. BACK TO TOP BUTTON CLICK HANDLER
   // ==========================================================================
-  const backToTopBtn = document.getElementById('back-to-top');
-
   if (backToTopBtn) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        backToTopBtn.classList.add('show');
-      } else {
-        backToTopBtn.classList.remove('show');
-      }
-    }, { passive: true });
-
     backToTopBtn.addEventListener('click', () => {
       window.scrollTo({
         top: 0,
@@ -325,7 +339,7 @@ const init = () => {
         if (submitBtn) {
           // Update button state to loading
           submitBtn.disabled = true;
-          submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin"></i>';
+          submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>';
         }
 
         // Simulate API Gateway & Lambda service response (Phase 1 dummy state)
@@ -407,6 +421,25 @@ const init = () => {
     }
   });
 
+  // Centralized Modal Event Delegation (replaces inline onclick and handles secure opens)
+  if (modalBodyContent) {
+    modalBodyContent.addEventListener('click', (e) => {
+      const btn = e.target.closest('button');
+      if (!btn) return;
+      
+      if (btn.classList.contains('mock-verify-btn')) {
+        btn.textContent = 'Mock Verification Active!';
+      } else if (btn.classList.contains('github-link-btn')) {
+        const url = btn.getAttribute('data-url');
+        if (url) {
+          window.open(url, '_blank', 'noopener,noreferrer');
+        }
+      } else if (btn.classList.contains('close-modal-btn')) {
+        closeModal();
+      }
+    });
+  }
+
   // Certifications View Certificate Click Listener
   const certButtons = document.querySelectorAll('.cert-verify-btn');
   certButtons.forEach(btn => {
@@ -418,7 +451,7 @@ const init = () => {
         case 'AWS Academy Cloud Foundations':
           detailsHTML = `
             <div class="modal-mock-cert-box">
-              <i class="fa-brands fa-aws modal-cert-badge aws-badge-color"></i>
+              <i class="fa-brands fa-aws modal-cert-badge aws-badge-color" aria-hidden="true"></i>
               <div>
                 <p><strong>AWS Academy Cloud Foundations</strong></p>
                 <p style="font-size: 0.85rem; margin-top: 0.25rem;">Credential ID: AWS-ACF-2025</p>
@@ -430,7 +463,7 @@ const init = () => {
                   (Verified and issued via AWS Academy platform)
                 </p>
               </div>
-              <button class="btn btn-primary btn-sm" onclick="this.textContent='Mock Verification Active!'">
+              <button class="btn btn-primary btn-sm mock-verify-btn" aria-label="Verify credential online">
                 Verify Credential ID
               </button>
             </div>
@@ -441,7 +474,7 @@ const init = () => {
         case 'AWS cloud Architecting':
           detailsHTML = `
             <div class="modal-mock-cert-box">
-              <i class="fa-solid fa-cloud-arrow-up modal-cert-badge aws-badge-color"></i>
+              <i class="fa-solid fa-cloud-arrow-up modal-cert-badge aws-badge-color" aria-hidden="true"></i>
               <div>
                 <p><strong>AWS Cloud Architecting</strong></p>
                 <p style="font-size: 0.85rem; margin-top: 0.25rem;">Credential: AWS Academy Cloud Architecting Course</p>
@@ -449,7 +482,7 @@ const init = () => {
               <div class="modal-meta-row">
                 <p>Validates hands-on knowledge of architecting scalable, resilient, and high-performing cloud infrastructures on AWS.</p>
               </div>
-              <button class="btn btn-primary btn-sm" onclick="this.textContent='Mock Verification Active!'">
+              <button class="btn btn-primary btn-sm mock-verify-btn" aria-label="Verify credential online">
                 Verify Credential
               </button>
             </div>
@@ -460,7 +493,7 @@ const init = () => {
         case 'Accenture Nordics Simulation':
           detailsHTML = `
             <div class="modal-mock-cert-box">
-              <i class="fa-solid fa-laptop-code modal-cert-badge general-badge-color"></i>
+              <i class="fa-solid fa-laptop-code modal-cert-badge general-badge-color" aria-hidden="true"></i>
               <div>
                 <p><strong>Accenture Nordics - Software Engineering Job Simulation</strong></p>
                 <p style="font-size: 0.85rem; margin-top: 0.25rem;">Provider: Forage (April 2025)</p>
@@ -468,7 +501,7 @@ const init = () => {
               <div class="modal-meta-row">
                 <p>Completed practical tasks simulating software development workflows, system analysis, and API design matching Nordic enterprise requirements.</p>
               </div>
-              <button class="btn btn-primary btn-sm" onclick="this.textContent='Mock Verification Active!'">
+              <button class="btn btn-primary btn-sm mock-verify-btn" aria-label="Verify credential online">
                 Verify Credential
               </button>
             </div>
@@ -491,7 +524,7 @@ const init = () => {
         case 'Delhi Noida Heritage System':
           detailsHTML = `
             <div class="modal-mock-cert-box">
-              <i class="fa-solid fa-compass modal-cert-badge general-badge-color"></i>
+              <i class="fa-solid fa-compass modal-cert-badge general-badge-color" aria-hidden="true"></i>
               <div>
                 <p style="margin-bottom: 0.75rem;"><strong>Delhi Noida Heritage System Platform</strong></p>
                 <p style="font-size: 0.875rem;">Embark on an enriching journey traversing ancient monuments, historical landmarks, and cultural treasures, guided expertly to unveil stories woven through time.</p>
@@ -499,7 +532,7 @@ const init = () => {
               <div class="modal-meta-row" style="text-align: left; background: rgba(0,0,0,0.1); padding: 1rem; border-radius: var(--radius-sm);">
                 <p><strong>Tech Stack:</strong> React.js, Tailwind CSS, Supabase backend, Netlify deployment.</p>
               </div>
-              <button class="btn btn-primary btn-sm" onclick="window.open('https://github.com/EngHarshita', '_blank')">
+              <button class="btn btn-primary btn-sm github-link-btn" data-url="https://github.com/EngHarshita" aria-label="Visit GitHub repository">
                 Go to GitHub Repository
               </button>
             </div>
@@ -510,7 +543,7 @@ const init = () => {
         case 'MERN Chat Application':
           detailsHTML = `
             <div class="modal-mock-cert-box">
-              <i class="fa-solid fa-comments modal-cert-badge general-badge-color"></i>
+              <i class="fa-solid fa-comments modal-cert-badge general-badge-color" aria-hidden="true"></i>
               <div>
                 <p style="margin-bottom: 0.75rem;"><strong>MERN Chat &amp; Video Call App Real-Time Demo</strong></p>
                 <p style="font-size: 0.875rem;">Built a full-stack real-time communication platform with features like instant messaging, video calling (WebRTC), JWT authentication, cloud file sharing, and multi-device support.</p>
@@ -518,7 +551,7 @@ const init = () => {
               <div class="modal-meta-row" style="text-align: left; background: rgba(0,0,0,0.1); padding: 1rem; border-radius: var(--radius-sm);">
                 <p><strong>Tech Stack:</strong> MongoDB, Express.js, React.js, Node.js, Socket.io, WebRTC.</p>
               </div>
-              <button class="btn btn-primary btn-sm" onclick="window.open('https://github.com/EngHarshita', '_blank')">
+              <button class="btn btn-primary btn-sm github-link-btn" data-url="https://github.com/EngHarshita" aria-label="Visit GitHub repository">
                 Go to GitHub Repository
               </button>
             </div>
@@ -529,7 +562,7 @@ const init = () => {
         case 'Hotel Management System':
           detailsHTML = `
             <div class="modal-mock-cert-box">
-              <i class="fa-solid fa-hotel modal-cert-badge java-badge-color"></i>
+              <i class="fa-solid fa-hotel modal-cert-badge java-badge-color" aria-hidden="true"></i>
               <div>
                 <p style="margin-bottom: 0.75rem;"><strong>Hotel Reservation System Demo</strong></p>
                 <p style="font-size: 0.875rem;">Designed and implemented a comprehensive hotel reservation system using Java programming, demonstrating Object-Oriented Programming (OOPs) concepts for efficient development.</p>
@@ -537,7 +570,7 @@ const init = () => {
               <div class="modal-meta-row" style="text-align: left; background: rgba(0,0,0,0.1); padding: 1rem; border-radius: var(--radius-sm);">
                 <p><strong>Tech Stack:</strong> Java Programming, OOPs principles.</p>
               </div>
-              <button class="btn btn-primary btn-sm" onclick="window.open('https://github.com/EngHarshita', '_blank')">
+              <button class="btn btn-primary btn-sm github-link-btn" data-url="https://github.com/EngHarshita" aria-label="Visit GitHub repository">
                 Go to GitHub Repository
               </button>
             </div>
@@ -548,7 +581,7 @@ const init = () => {
         case 'Student Grade Tracker':
           detailsHTML = `
             <div class="modal-mock-cert-box">
-              <i class="fa-solid fa-chart-line modal-cert-badge general-badge-color"></i>
+              <i class="fa-solid fa-chart-line modal-cert-badge general-badge-color" aria-hidden="true"></i>
               <div>
                 <p style="margin-bottom: 0.75rem;"><strong>Student Grade Tracker Demo</strong></p>
                 <p style="font-size: 0.875rem;">Developed an interactive Student Grade Tracker using Java programming, enabling average grade computations, distributions, and stats visual charts.</p>
@@ -556,7 +589,7 @@ const init = () => {
               <div class="modal-meta-row" style="text-align: left; background: rgba(0,0,0,0.1); padding: 1rem; border-radius: var(--radius-sm);">
                 <p><strong>Tech Stack:</strong> Java, OOPs, Data Collections.</p>
               </div>
-              <button class="btn btn-primary btn-sm" onclick="window.open('https://github.com/EngHarshita', '_blank')">
+              <button class="btn btn-primary btn-sm github-link-btn" data-url="https://github.com/EngHarshita" aria-label="Visit GitHub repository">
                 Go to GitHub Repository
               </button>
             </div>
@@ -567,7 +600,7 @@ const init = () => {
         case 'Cloud Resume Project':
           detailsHTML = `
             <div class="modal-mock-cert-box">
-              <i class="fa-solid fa-cloud-arrow-up modal-cert-badge aws-badge-color"></i>
+              <i class="fa-solid fa-cloud-arrow-up modal-cert-badge aws-badge-color" aria-hidden="true"></i>
               <div>
                 <p style="margin-bottom: 0.75rem;"><strong>Cloud Resume Project Serverless Infrastructure</strong></p>
                 <p style="font-size: 0.875rem;">This portfolio is currently running live using high-performance AWS cloud distribution channels!</p>
@@ -583,7 +616,7 @@ const init = () => {
                   <li><strong>AWS SES:</strong> Simple Email Service alerts.</li>
                 </ul>
               </div>
-              <button class="btn btn-primary btn-sm" onclick="closeModal()">
+              <button class="btn btn-primary btn-sm close-modal-btn" aria-label="Close details modal">
                 Continue Exploring Portfolio
               </button>
             </div>

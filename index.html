@@ -45,8 +45,15 @@
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="alternate icon" href="favicon.ico" type="image/x-icon">
 
+  <!-- Browser Colors -->
+  <meta name="theme-color" content="#050F19">
+
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap">
+  </noscript>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Custom Stylesheet -->
@@ -58,7 +65,7 @@
 <body>
 
   <!-- Loading Screen -->
-  <div id="loader" class="loader-overlay" aria-hidden="true">
+  <div id="loader" class="loader-overlay" aria-live="polite" aria-busy="true">
     <div class="loader-spinner">
       <div class="spinner-ring"></div>
       <span class="loader-text">Loading Portfolio...</span>
@@ -370,7 +377,7 @@
           <!-- Project 1: Delhi Noida Heritage System -->
           <article class="glass-card project-card">
             <div class="project-image-wrapper">
-              <img src="images/project-hotel.svg" alt="Delhi Noida Heritage System Mockup" class="project-img" loading="lazy" width="400" height="200">
+              <img src="images/project-hotel.svg" alt="Delhi Noida Heritage System Mockup" class="project-img" loading="lazy" width="400" height="200" decoding="async">
               <div class="project-badge">Web Platform</div>
             </div>
             <div class="project-info">
@@ -398,7 +405,7 @@
           <!-- Project 2: MERN Chat & Video Call App -->
           <article class="glass-card project-card">
             <div class="project-image-wrapper">
-              <img src="images/project-chat.svg" alt="MERN Chat & Video Call App UI Mockup" class="project-img" loading="lazy" width="400" height="200">
+              <img src="images/project-chat.svg" alt="MERN Chat & Video Call App UI Mockup" class="project-img" loading="lazy" width="400" height="200" decoding="async">
               <div class="project-badge">Full Stack</div>
             </div>
             <div class="project-info">
@@ -427,7 +434,7 @@
           <!-- Project 3: Hotel Reservation System -->
           <article class="glass-card project-card">
             <div class="project-image-wrapper">
-              <img src="images/project-erp.svg" alt="Hotel Reservation System visual mockup" class="project-img" loading="lazy" width="400" height="200">
+              <img src="images/project-erp.svg" alt="Hotel Reservation System visual mockup" class="project-img" loading="lazy" width="400" height="200" decoding="async">
               <div class="project-badge">Java Programming</div>
             </div>
             <div class="project-info">
@@ -454,7 +461,7 @@
           <!-- Project 4: Student Grade Tracker -->
           <article class="glass-card project-card">
             <div class="project-image-wrapper">
-              <img src="images/project-grade.svg" alt="Student Grade Tracker visual mockup" class="project-img" loading="lazy" width="400" height="200">
+              <img src="images/project-grade.svg" alt="Student Grade Tracker visual mockup" class="project-img" loading="lazy" width="400" height="200" decoding="async">
               <div class="project-badge">Java Programming</div>
             </div>
             <div class="project-info">
@@ -481,7 +488,7 @@
           <!-- Project 5: Cloud Resume Project -->
           <article class="glass-card project-card">
             <div class="project-image-wrapper">
-              <img src="images/project-resume.svg" alt="Cloud Resume Project AWS Architecture" class="project-img" loading="lazy" width="400" height="200">
+              <img src="images/project-resume.svg" alt="Cloud Resume Project AWS Architecture" class="project-img" loading="lazy" width="400" height="200" decoding="async">
               <div class="project-badge">Cloud Architecture</div>
             </div>
             <div class="project-info">
@@ -607,27 +614,27 @@
               <div class="form-row">
                 <div class="form-group">
                   <label for="form-name">Name</label>
-                  <input type="text" id="form-name" name="name" required placeholder="John Doe" aria-required="true">
+                  <input type="text" id="form-name" name="name" required placeholder="John Doe" aria-required="true" autocomplete="name">
                   <span class="form-error-msg" id="name-error">Please enter your name</span>
                 </div>
                 <div class="form-group">
                   <label for="form-email">Email</label>
-                  <input type="email" id="form-email" name="email" required placeholder="john@example.com" aria-required="true">
+                  <input type="email" id="form-email" name="email" required placeholder="john@example.com" aria-required="true" autocomplete="email">
                   <span class="form-error-msg" id="email-error">Please enter a valid email address</span>
                 </div>
               </div>
               <div class="form-group">
                 <label for="form-subject">Subject</label>
-                <input type="text" id="form-subject" name="subject" required placeholder="Job Opportunity / Collab" aria-required="true">
+                <input type="text" id="form-subject" name="subject" required placeholder="Job Opportunity / Collab" aria-required="true" autocomplete="off">
                 <span class="form-error-msg" id="subject-error">Please enter a subject</span>
               </div>
               <div class="form-group">
                 <label for="form-message">Message</label>
-                <textarea id="form-message" name="message" rows="5" required placeholder="Hi Harshita, let's talk..." aria-required="true"></textarea>
+                <textarea id="form-message" name="message" rows="5" required placeholder="Hi Harshita, let's talk..." aria-required="true" autocomplete="off"></textarea>
                 <span class="form-error-msg" id="message-error">Please enter your message</span>
               </div>
               
-              <button type="submit" class="btn btn-primary btn-block">
+              <button type="submit" class="btn btn-primary btn-block" aria-label="Send Message">
                 Send Message <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
               </button>
             </form>
