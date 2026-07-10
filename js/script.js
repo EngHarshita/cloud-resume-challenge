@@ -662,3 +662,23 @@ if (document.readyState !== 'loading') {
 } else {
   document.addEventListener('DOMContentLoaded', init);
 }
+// ==========================================================================
+// 12. VISITOR COUNTER
+// ==========================================================================
+
+async function updateVisitorCount() {
+    try {
+        const response = await fetch("https://l3krd3bfpjvr76tek2lngrqnqq0lkrqd.lambda-url.us-east-1.on.aws/");
+
+        const data = await response.json();
+
+        const visitorElement = document.getElementById("visitor-count");
+        if (visitorElement) {
+            visitorElement.innerText = data.count;
+        }
+    } catch (error) {
+        console.error("Visitor Counter Error:", error);
+    }
+}
+
+updateVisitorCount();
