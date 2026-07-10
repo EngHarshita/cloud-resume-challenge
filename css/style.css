@@ -1864,3 +1864,223 @@ html[data-theme="light"] .footer-social-link {
     scroll-behavior: auto !important;
   }
 }
+
+/* ==========================================================================
+   PORTFOLIO ANALYTICS DASHBOARD
+   ========================================================================== */
+.analytics-section {
+  padding: 4rem 0 2rem 0;
+  z-index: 15;
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.analytics-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px -10px var(--shadow-color);
+  transition: transform var(--transition-normal), 
+              background-color var(--transition-normal), 
+              border-color var(--transition-normal), 
+              box-shadow var(--transition-normal);
+}
+
+/* Gradient border layout */
+.analytics-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--radius-md);
+  padding: 1.5px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  transition: background var(--transition-normal);
+}
+
+.analytics-card:hover::before {
+  background: var(--accent-gradient);
+}
+
+/* Soft hover animation */
+.analytics-card:hover {
+  transform: translateY(-5px);
+  background-color: var(--card-hover-bg);
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: 0 15px 35px -10px rgba(99, 102, 241, 0.25);
+}
+
+/* Accent Card Glow Effect */
+.card-glow {
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
+  background: radial-gradient(circle, var(--glow-color) 0%, rgba(99, 102, 241, 0) 65%);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.analytics-card:hover .card-glow {
+  opacity: 1;
+}
+
+.analytics-icon-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 4rem;
+  height: 4rem;
+  border-radius: var(--radius-circle);
+  background: rgba(99, 102, 241, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  transition: transform var(--transition-normal), background var(--transition-normal);
+}
+
+.analytics-card:hover .analytics-icon-wrapper {
+  transform: scale(1.1);
+  background: var(--accent-gradient);
+  border-color: transparent;
+}
+
+.analytics-icon {
+  font-size: 1.5rem;
+  color: var(--accent-primary);
+  transition: color var(--transition-normal);
+}
+
+.analytics-card:hover .analytics-icon {
+  color: #ffffff;
+}
+
+.analytics-metric {
+  position: relative;
+  z-index: 2;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.analytics-number {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  transition: all var(--transition-normal);
+}
+
+.analytics-label {
+  position: relative;
+  z-index: 2;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Loading skeleton styles with modern shimmer effect */
+.loading-placeholder {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 2.5rem; /* Matches the 2.5rem font size of the metric to prevent layout shift */
+  background: rgba(255, 255, 255, 0.06) !important;
+  -webkit-text-fill-color: transparent !important;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+html[data-theme="light"] .loading-placeholder {
+  background: rgba(0, 0, 0, 0.06) !important;
+}
+
+.loading-placeholder::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.08) 20%,
+    rgba(255, 255, 255, 0.16) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 1.5s infinite ease-in-out;
+}
+
+html[data-theme="light"] .loading-placeholder::after {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 0.04) 20%,
+    rgba(0, 0, 0, 0.08) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 992px) {
+  .analytics-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .analytics-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .analytics-card {
+    padding: 2rem 1.5rem;
+  }
+}
+

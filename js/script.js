@@ -8,7 +8,7 @@ const init = () => {
   // 1. LOADING SCREEN
   // ==========================================================================
   const loader = document.getElementById('loader');
-  
+
   const hideLoader = () => {
     if (loader) {
       loader.classList.add('fade-out');
@@ -35,14 +35,14 @@ const init = () => {
   // ==========================================================================
   const header = document.querySelector('.header');
   const backToTopBtn = document.getElementById('back-to-top');
-  
+
   let scrollScheduled = false;
   const handleScroll = () => {
     if (!scrollScheduled) {
       scrollScheduled = true;
       requestAnimationFrame(() => {
         const scrollY = window.scrollY;
-        
+
         if (header) {
           if (scrollY > 20) {
             header.classList.add('scrolled');
@@ -50,7 +50,7 @@ const init = () => {
             header.classList.remove('scrolled');
           }
         }
-        
+
         if (backToTopBtn) {
           if (scrollY > 300) {
             backToTopBtn.classList.add('show');
@@ -58,12 +58,12 @@ const init = () => {
             backToTopBtn.classList.remove('show');
           }
         }
-        
+
         scrollScheduled = false;
       });
     }
   };
-  
+
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll(); // Run initially on load
 
@@ -110,11 +110,11 @@ const init = () => {
   const setTheme = (theme) => {
     htmlElement.setAttribute('data-theme', theme);
     safeLocalStorage.setItem('theme', theme);
-    
+
     if (themeColorMeta) {
       themeColorMeta.setAttribute('content', theme === 'light' ? '#FBFAFC' : '#050F19');
     }
-    
+
     if (themeToggleBtn) {
       // Update theme toggle icon aria labels
       if (theme === 'light') {
@@ -186,7 +186,7 @@ const init = () => {
   const typeEffect = () => {
     if (!typingTextSpan) return;
     const currentWord = words[wordIndex];
-    
+
     if (isDeleting) {
       // Remove character
       typingTextSpan.textContent = currentWord.substring(0, charIndex - 1);
@@ -223,7 +223,7 @@ const init = () => {
   // 7. INTERSECTION OBSERVER FOR ACTIVE NAVBAR LINKS
   // ==========================================================================
   const sections = document.querySelectorAll('section[id]');
-  
+
   const observerOptions = {
     root: null,
     rootMargin: '-30% 0px -60% 0px', // Trigger when section occupies the middle view
@@ -234,7 +234,7 @@ const init = () => {
     entries.forEach(entry => {
       const sectionId = entry.target.getAttribute('id');
       const matchingNavLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
-      
+
       if (entry.isIntersecting && matchingNavLink) {
         // Remove active class from all navlinks
         navLinks.forEach(link => link.classList.remove('active'));
@@ -335,7 +335,7 @@ const init = () => {
       if (isNameValid && isEmailValid && isSubjectValid && isMessageValid) {
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
-        
+
         if (submitBtn) {
           // Update button state to loading
           submitBtn.disabled = true;
@@ -355,7 +355,7 @@ const init = () => {
               </span>
             `;
           }
-          
+
           // Reset form & inputs error states
           contactForm.reset();
           if (submitBtn) {
@@ -405,7 +405,7 @@ const init = () => {
   if (modalCloseBtn) {
     modalCloseBtn.addEventListener('click', closeModal);
   }
-  
+
   if (modal) {
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
@@ -426,7 +426,7 @@ const init = () => {
     modalBodyContent.addEventListener('click', (e) => {
       const btn = e.target.closest('button');
       if (!btn) return;
-      
+
       if (btn.classList.contains('mock-verify-btn')) {
         btn.textContent = 'Mock Verification Active!';
       } else if (btn.classList.contains('github-link-btn')) {
@@ -470,7 +470,7 @@ const init = () => {
           `;
           openModal('Certification Verification', detailsHTML);
           break;
-          
+
         case 'AWS cloud Architecting':
           detailsHTML = `
             <div class="modal-mock-cert-box">
@@ -489,7 +489,7 @@ const init = () => {
           `;
           openModal('Certification Verification', detailsHTML);
           break;
-          
+
         case 'Accenture Nordics Simulation':
           detailsHTML = `
             <div class="modal-mock-cert-box">
@@ -631,7 +631,7 @@ const init = () => {
   // 11. SCROLL REVEAL OBSERVER
   // ==========================================================================
   const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
-  
+
   if ('IntersectionObserver' in window && scrollRevealElements.length > 0) {
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -645,7 +645,7 @@ const init = () => {
       threshold: 0.08,
       rootMargin: '0px 0px -20px 0px'
     });
-    
+
     scrollRevealElements.forEach(element => {
       revealObserver.observe(element);
     });
@@ -663,22 +663,166 @@ if (document.readyState !== 'loading') {
   document.addEventListener('DOMContentLoaded', init);
 }
 // ==========================================================================
-// 12. VISITOR COUNTER
+// 12. PORTFOLIO ANALYTICS & VISITOR COUNTER
 // ==========================================================================
 
-async function updateVisitorCount() {
-    try {
-        const response = await fetch("https://l3krd3bfpjvr76tek2lngrqnqq0lkrqd.lambda-url.us-east-1.on.aws/");
+const API_ENDPOINTS = {
+  analytics: "https://hbtf25j3mfb2mywjqdg2mzrvtm0lrxum.lambda-url.us-east-1.on.aws/",
+  downloads: "https://rkvyg73kfiroei34i2mk2lcedy0qqlpt.lambda-url.us-east-1.on.aws/"
+};
 
-        const data = await response.json();
+// Internal analytics state tracking
+const analyticsState = {
+  data: {
+    visitors: null,
+    downloads: null,
+    messages: null
+  },
+  inViewport: false,
+  animated: false
+};
 
-        const visitorElement = document.getElementById("visitor-count");
-        if (visitorElement) {
-            visitorElement.innerText = data.count;
-        }
-    } catch (error) {
-        console.error("Visitor Counter Error:", error);
+// Helper function to animate numbers counting up
+function animateNumber(elementId, targetValue) {
+  const element = document.getElementById(elementId);
+  if (!element) return;
+
+  element.classList.remove("loading-placeholder");
+  element.style.background = "none";
+  element.style.webkitTextFillColor = "initial"; // Restore color gradient
+
+  const duration = 1000; // Count-up duration around 1 second
+  const startTime = performance.now();
+
+  function update(currentTime) {
+    const elapsedTime = currentTime - startTime;
+    if (elapsedTime >= duration) {
+      element.innerText = targetValue.toLocaleString();
+    } else {
+      const progress = elapsedTime / duration;
+      const easeProgress = progress * (2 - progress); // Ease out quad formula
+      const currentValue = Math.floor(easeProgress * targetValue);
+      element.innerText = currentValue.toLocaleString();
+      requestAnimationFrame(update);
     }
+  }
+  requestAnimationFrame(update);
 }
 
-updateVisitorCount();
+// Trigger animations for loaded metrics
+function triggerAnalyticsAnimation() {
+  analyticsState.inViewport = true;
+
+  // Prevent duplicate execution of count-up animation
+  if (analyticsState.animated) return;
+
+  let allMetricsLoaded = true;
+  const metrics = [
+    { id: "visitors-count", value: analyticsState.data.visitors },
+    { id: "downloads-count", value: analyticsState.data.downloads },
+    { id: "messages-count", value: analyticsState.data.messages }
+  ];
+
+  metrics.forEach(metric => {
+    if (metric.value !== null) {
+      animateNumber(metric.id, metric.value);
+    } else {
+      allMetricsLoaded = false;
+    }
+  });
+
+  if (allMetricsLoaded) {
+    analyticsState.animated = true;
+  }
+}
+
+// Initialize IntersectionObserver to trigger animation when dashboard enters viewport
+function initAnalyticsObserver() {
+  const analyticsSection = document.getElementById("analytics");
+  if (!analyticsSection) return;
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          triggerAnalyticsAnimation();
+          observer.unobserve(entry.target); // Animate only once
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.15 // Trigger when 15% of section is visible
+    });
+
+    observer.observe(analyticsSection);
+  } else {
+    // Fallback for older browsers: animate immediately
+    triggerAnalyticsAnimation();
+  }
+}
+
+// ===============================
+// Fetch Analytics Data
+// ===============================
+async function fetchAnalyticsData() {
+  try {
+    const response = await fetch(API_ENDPOINTS.analytics);
+    const data = await response.json();
+
+    analyticsState.data.visitors = data.visitors;
+    analyticsState.data.downloads = data.downloads;
+    analyticsState.data.messages = data.messages;
+
+    // Hero Visitor Badge
+    const heroVisitorBadge = document.getElementById("visitor-count");
+    if (heroVisitorBadge) {
+      heroVisitorBadge.innerText = data.visitors;
+    }
+
+    // Dashboard Cards
+    const visitorsCard = document.getElementById("visitors-count");
+    if (visitorsCard) {
+      visitorsCard.innerText = data.visitors;
+    }
+
+    const downloadsCard = document.getElementById("downloads-count");
+    if (downloadsCard) {
+      downloadsCard.innerText = data.downloads;
+    }
+
+    const messagesCard = document.getElementById("messages-count");
+    if (messagesCard) {
+      messagesCard.innerText = data.messages;
+    }
+
+    if (analyticsState.inViewport && !analyticsState.animated) {
+      triggerAnalyticsAnimation();
+    }
+
+  } catch (error) {
+    console.error("Analytics API Error:", error);
+  }
+}
+
+// Track resume download event
+async function trackResumeDownload() {
+  try {
+    // POST request to increment counter on the backend
+    await fetch("https://rkvyg73kfiroei34i2mk2lcedy0qqlpt.lambda-url.us-east-1.on.aws/");
+
+    // Refresh dashboard values
+    await fetchAnalyticsData();
+
+  } catch (error) {
+    console.error("Resume Download Error:", error);
+  }
+}
+
+// Backward compatibility helper
+function updateVisitorCount() {
+  fetchAnalyticsData();
+}
+
+// Initialize components
+fetchAnalyticsData();
+initAnalyticsObserver();
