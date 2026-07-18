@@ -323,7 +323,7 @@ const init = () => {
     }
 
     // Submit action
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       // Verify all fields before submitting
@@ -342,34 +342,149 @@ const init = () => {
           submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>';
         }
 
-        // Simulate API Gateway & Lambda service response (Phase 1 dummy state)
-        setTimeout(() => {
-          if (formFeedback) {
-            // Successful response state
-            formFeedback.classList.remove('error');
-            formFeedback.classList.add('success');
-            formFeedback.innerHTML = `
-              <strong>Success!</strong> Message sent successfully.<br>
-              <span style="font-size: 0.8rem; font-weight: normal;">
-                (Simulated contact microservice: API Gateway &rarr; Lambda &rarr; DynamoDB &amp; SES)
-              </span>
-            `;
+        // Hide any previous feedback before starting new submission
+        if (formFeedback) {
+          formFeedback.style.display = 'none';
+          formFeedback.className = 'form-feedback-alert'; // reset classes
+          formFeedback.innerHTML = '';
+        }
+
+        const formData = {
+          name: inputs.name.value.trim(),
+          email: inputs.email.value.trim(),
+          subject: inputs.subject.value.trim(),
+          message: inputs.message.value.trim()
+        };
+
+        // Helper to fetch a resource with retry logic and exponential backoff
+        const fetchWithRetry = async (url, options = {}, retries = 3, delay = 1000) => {
+          for (let i = 0; i < retries; i++) {
+            try {
+              const response = await fetch(url, options);
+              if (response.ok) {
+                return response;
+              }
+              if (response.status >= 400 && response.status < 500) {
+                return response;
+              }
+              throw new Error(`Server responded with status ${response.status}`);
+            } catch (err) {
+              const isLastAttempt = i === retries - 1;
+              if (isLastAttempt) throw err;
+              const backoffDelay = delay * Math.pow(2, i);
+              console.warn(`Request failed (attempt ${i + 1}/${retries}). Retrying in ${backoffDelay}ms...`, err);
+              await new Promise(resolve => setTimeout(resolve, backoffDelay));
+            }
+          }
+        };
+
+        try {
+          // AWS Lambda Form Submission Endpoint
+          const response = await fetchWithRetry(
+            "https://7erjkiegfk4dio3js4hsrhkahu0xdxxa.lambda-url.us-east-1.on.aws/",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(formData)
+            },
+            3, // 3 retries
+            1000 // 1s base delay
+          );
+
+          const result = await response.json();
+
+          if (response.ok) {
+            if (formFeedback) {
+              formFeedback.style.display = 'block';
+              formFeedback.classList.remove('error');
+              formFeedback.classList.add('success');
+              formFeedback.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                  <i class="fa-solid fa-circle-check" style="font-size: 1.25rem;"></i>
+                  <div>
+                    <strong>Success!</strong> Message sent successfully.<br>
+                    <span style="font-size: 0.8rem; font-weight: normal;">
+                      Thank you for contacting me. I will get back to you shortly.
+                    </span>
+                  </div>
+                </div>
+              `;
+            }
+
+            // Automatically clear the form
+            contactForm.reset();
+
+            // Clear any input error classes
+            Object.values(inputs).forEach(input => {
+              if (input) {
+                const parentGroup = input.closest('.form-group');
+                if (parentGroup) parentGroup.classList.remove('error');
+              }
+            });
+
+            // Refresh analytics dashboard after success
+            if (typeof fetchAnalyticsData === 'function') {
+              fetchAnalyticsData();
+            }
+
+            // Smooth fade-out of success feedback after 8 seconds
+            setTimeout(() => {
+              if (formFeedback && formFeedback.classList.contains('success')) {
+                formFeedback.style.opacity = '0';
+                formFeedback.style.transform = 'translateY(-10px)';
+                formFeedback.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                setTimeout(() => {
+                  formFeedback.style.display = 'none';
+                  formFeedback.style.opacity = '';
+                  formFeedback.style.transform = '';
+                  formFeedback.style.transition = '';
+                  formFeedback.classList.remove('success');
+                }, 400);
+              }
+            }, 8000);
+
+          } else {
+            // Server error returned (e.g. Lambda returned custom validation error)
+            if (formFeedback) {
+              formFeedback.style.display = 'block';
+              formFeedback.classList.remove('success');
+              formFeedback.classList.add('error');
+              formFeedback.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                  <i class="fa-solid fa-circle-xmark" style="font-size: 1.25rem;"></i>
+                  <div>
+                    <strong>Submission Failed!</strong> ${result.error || 'Please try again.'}
+                  </div>
+                </div>
+              `;
+            }
           }
 
-          // Reset form & inputs error states
-          contactForm.reset();
+        } catch (error) {
+          // Graceful handling of network / fetch errors
+          console.error("Contact form error:", error);
+          if (formFeedback) {
+            formFeedback.style.display = 'block';
+            formFeedback.classList.remove('success');
+            formFeedback.classList.add('error');
+            formFeedback.innerHTML = `
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <i class="fa-solid fa-triangle-exclamation" style="font-size: 1.25rem;"></i>
+                <div>
+                  <strong>Network Error!</strong> Could not connect to the service. Please check your connection and try again.
+                </div>
+              </div>
+            `;
+          }
+        } finally {
+          // Re-enable submit button
           if (submitBtn) {
             submitBtn.disabled = false;
             submitBtn.innerHTML = originalBtnText;
           }
-
-          // Auto hide success feedback after 8 seconds
-          setTimeout(() => {
-            if (formFeedback) {
-              formFeedback.style.display = 'none';
-            }
-          }, 8000);
-        }, 1500);
+        }
       }
     });
   }
@@ -819,10 +934,18 @@ async function trackResumeDownload() {
 }
 
 // Backward compatibility helper
-function updateVisitorCount() {
-  fetchAnalyticsData();
-}
+async function updateVisitorCount() {
+  try {
+    // Visitor Lambda call (increments visitor count)
+    await fetch("https://l3krd3bfpjvr76tek2lngrqnqq0lkrqd.lambda-url.us-east-1.on.aws/");
 
+    // Refresh analytics after increment
+    await fetchAnalyticsData();
+
+  } catch (error) {
+    console.error("Visitor Counter Error:", error);
+  }
+}
 // Initialize components
-fetchAnalyticsData();
+updateVisitorCount();
 initAnalyticsObserver();
