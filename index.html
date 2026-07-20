@@ -173,9 +173,9 @@
     <section id="home" class="section hero-section">
       <div class="container hero-container">
         <div class="hero-content">
-          <span class="hero-welcome">Welcome to my Cloud Space</span>
+          <span class="hero-welcome"><span class="welcome-dot"></span>Welcome to my Cloud Space</span>
           <h1 class="hero-title">
-            Hi, I'm <span class="text-gradient">Harshita pal</span>
+            Hi, I'm <span class="text-gradient animate-gradient-bg">Harshita pal</span>
           </h1>
           <h2 class="hero-subtitle" aria-live="polite">
             I am a <span id="typing-text" class="text-accent"></span><span class="typed-cursor">|</span>
@@ -206,18 +206,52 @@
               <i class="fa-solid fa-envelope" aria-hidden="true"></i>
             </a>
           </div>
-        </div>
-        <div class="hero-visual">
-          <div class="avatar-wrapper">
-            <img src="images/profile.svg" alt="Harshita Pal Avatar Illustration" class="avatar-img" loading="eager"
-              width="300" height="300" fetchpriority="high" decoding="async">
-            <div class="avatar-backdrop"></div>
+          <div class="hero-stats">
+            <div class="hero-stat-card">
+              <div class="stat-icon-wrapper"><i class="fa-solid fa-users" aria-hidden="true"></i></div>
+              <div class="stat-info">
+                <span class="stat-value" id="visitor-count">0</span>
+                <span class="stat-label">Profile Views</span>
+              </div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="stat-icon-wrapper"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></div>
+              <div class="stat-info">
+                <span class="stat-value">3+</span>
+                <span class="stat-label">Featured Projects</span>
+              </div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="stat-icon-wrapper"><i class="fa-solid fa-award" aria-hidden="true"></i></div>
+              <div class="stat-info">
+                <span class="stat-value">3+</span>
+                <span class="stat-label">Certifications</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Visitor Counter -->
-      <div class="visitor-counter">
-        <i class="fa-solid fa-users" aria-hidden="true"></i> Visitors: <span id="visitor-count">0</span>
+        <div class="hero-visual">
+          <div class="avatar-orbit-wrapper">
+            <div class="orbit-path orbit-1"></div>
+            <div class="orbit-path orbit-2"></div>
+            
+            <div class="floating-badge badge-aws" title="AWS Infrastructure">
+              <i class="fa-brands fa-aws" aria-hidden="true"></i>
+            </div>
+            <div class="floating-badge badge-react" title="MERN Stack Developer">
+              <i class="fa-brands fa-react" aria-hidden="true"></i>
+            </div>
+            <div class="floating-badge badge-figma" title="UI/UX Figma designer">
+              <i class="fa-brands fa-figma" aria-hidden="true"></i>
+            </div>
+
+            <div class="avatar-wrapper">
+              <img src="images/harshita proffesional photo.png" alt="Harshita Pal Avatar Illustration" class="avatar-img" loading="eager"
+                width="500" height="500" fetchpriority="high" decoding="async">
+              <div class="avatar-backdrop"></div>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="scroll-indicator" aria-hidden="true">
         <a href="#about" aria-label="Scroll down to About section">
@@ -368,17 +402,49 @@
               </div>
               <p class="skill-desc">Serverless architecture provisioning, edge delivery, and DNS routing.</p>
             </div>
-            <div class="skill-tags-group">
-              <div class="skill-tag-pill"><i class="fa-brands fa-aws aws-color" aria-hidden="true"></i> AWS</div>
-              <div class="skill-tag-pill"><i class="fa-solid fa-cloud-sun route-color" aria-hidden="true"></i>
-                CloudFront</div>
-              <div class="skill-tag-pill"><i class="fa-solid fa-cubes aws-color" aria-hidden="true"></i> AWS Lambda
+            <div class="skills-progress-list">
+              <div class="skill-progress-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-brands fa-aws aws-color" aria-hidden="true"></i> AWS</span>
+                  <span class="skill-value">90%</span>
+                </div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 90%"></div></div>
               </div>
-              <div class="skill-tag-pill"><i class="fa-solid fa-database mysql-color" aria-hidden="true"></i> DynamoDB
+              <div class="skill-progress-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-solid fa-cloud-sun route-color" aria-hidden="true"></i> CloudFront</span>
+                  <span class="skill-value">85%</span>
+                </div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 85%"></div></div>
               </div>
-              <div class="skill-tag-pill"><i class="fa-solid fa-network-wired route-color" aria-hidden="true"></i> Route
-                53</div>
-              <div class="skill-tag-pill"><i class="fa-brands fa-docker" aria-hidden="true"></i> Docker</div>
+              <div class="skill-progress-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-solid fa-cubes aws-color" aria-hidden="true"></i> AWS Lambda</span>
+                  <span class="skill-value">88%</span>
+                </div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 88%"></div></div>
+              </div>
+              <div class="skill-progress-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-solid fa-database mysql-color" aria-hidden="true"></i> DynamoDB</span>
+                  <span class="skill-value">85%</span>
+                </div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 85%"></div></div>
+              </div>
+              <div class="skill-progress-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-solid fa-network-wired route-color" aria-hidden="true"></i> Route 53</span>
+                  <span class="skill-value">80%</span>
+                </div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 80%"></div></div>
+              </div>
+              <div class="skill-progress-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-brands fa-docker" aria-hidden="true"></i> Docker</span>
+                  <span class="skill-value">75%</span>
+                </div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 75%"></div></div>
+              </div>
             </div>
           </div>
 
@@ -391,13 +457,28 @@
               </div>
               <p class="skill-desc">Figma layout construction and responsive interface systems.</p>
             </div>
-            <div class="skill-tags-group">
-              <div class="skill-tag-pill"><i class="fa-brands fa-figma general-badge-color" style="color:#F24E1E;"
-                  aria-hidden="true"></i> Figma</div>
-              <div class="skill-tag-pill"><i class="fa-solid fa-pen-nib route-color" aria-hidden="true"></i> Wireframing
+            <div class="skills-progress-list">
+              <div class="skill-progress-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-brands fa-figma general-badge-color" style="color:#F24E1E;" aria-hidden="true"></i> Figma</span>
+                  <span class="skill-value">92%</span>
+                </div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 92%"></div></div>
               </div>
-              <div class="skill-tag-pill"><i class="fa-solid fa-crop general-badge-color" aria-hidden="true"></i>
-                Prototyping</div>
+              <div class="skill-progress-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-solid fa-pen-nib route-color" aria-hidden="true"></i> Wireframing</span>
+                  <span class="skill-value">88%</span>
+                </div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 88%"></div></div>
+              </div>
+              <div class="skill-progress-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-solid fa-crop general-badge-color" aria-hidden="true"></i> Prototyping</span>
+                  <span class="skill-value">90%</span>
+                </div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 90%"></div></div>
+              </div>
             </div>
           </div>
 
@@ -410,20 +491,56 @@
               </div>
               <p class="skill-desc">Development tools, diagnostic environments, and software methodologies.</p>
             </div>
-            <div class="skill-tags-group">
-              <div class="skill-tag-pill"><i class="fa-brands fa-git-alt git-color" aria-hidden="true"></i> Git &amp;
-                GitHub</div>
-              <div class="skill-tag-pill"><i class="fa-solid fa-laptop-code api-color" aria-hidden="true"></i> VS Code
-                &amp; IntelliJ</div>
-              <div class="skill-tag-pill"><i class="fa-solid fa-envelope vscode-color" aria-hidden="true"></i> Postman
+            <div class="skills-progress-list">
+              <div class="skill-progress-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-brands fa-git-alt git-color" aria-hidden="true"></i> Git &amp; GitHub</span>
+                  <span class="skill-value">88%</span>
+                </div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 88%"></div></div>
               </div>
-              <div class="skill-tag-pill"><i class="fa-solid fa-fire html-color" aria-hidden="true"></i> Firebase</div>
-              <div class="skill-tag-pill"><i class="fa-solid fa-circle-check spring-color" aria-hidden="true"></i>
-                Problem Solving</div>
-              <div class="skill-tag-pill"><i class="fa-solid fa-users route-color" aria-hidden="true"></i> Team
-                Collaboration</div>
-              <div class="skill-tag-pill"><i class="fa-solid fa-check-double general-badge-color"
-                  aria-hidden="true"></i> OOPs Concepts</div>
+              <div class="skill-progress-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-solid fa-laptop-code api-color" aria-hidden="true"></i> VS Code &amp; IntelliJ</span>
+                  <span class="skill-value">90%</span>
+                </div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 90%"></div></div>
+              </div>
+              <div class="skill-progress-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-solid fa-envelope vscode-color" aria-hidden="true"></i> Postman</span>
+                  <span class="skill-value">85%</span>
+                </div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 85%"></div></div>
+              </div>
+              <div class="skill-progress-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-solid fa-fire html-color" aria-hidden="true"></i> Firebase</span>
+                  <span class="skill-value">80%</span>
+                </div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 80%"></div></div>
+              </div>
+              <div class="skill-progress-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-solid fa-circle-check spring-color" aria-hidden="true"></i> Problem Solving</span>
+                  <span class="skill-value">85%</span>
+                </div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 85%"></div></div>
+              </div>
+              <div class="skill-progress-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-solid fa-users route-color" aria-hidden="true"></i> Team Collaboration</span>
+                  <span class="skill-value">90%</span>
+                </div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 90%"></div></div>
+              </div>
+              <div class="skill-progress-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fa-solid fa-check-double general-badge-color" aria-hidden="true"></i> OOPs Concepts</span>
+                  <span class="skill-value">85%</span>
+                </div>
+                <div class="skill-progress-bg"><div class="skill-progress-fill" style="width: 85%"></div></div>
+              </div>
             </div>
           </div>
         </div>
@@ -501,8 +618,11 @@
     <!-- Projects Section -->
     <section id="projects" class="section projects-section scroll-reveal">
       <div class="container">
-        <h2 class="section-title text-center"><span class="text-gradient">Featured Projects</span></h2>
+        <h2 class="section-title text-center my-projects-title">My <span class="text-yellow">Projects</span></h2>
         <div class="section-underline"></div>
+        <div class="section-subtitle-wrapper text-center">
+          <p class="section-subtitle-text">A showcase of my recent work, personal projects, and real-world solutions.</p>
+        </div>
 
         <div class="projects-grid">
           <!-- Project 1: Delhi Noida Heritage System -->
@@ -531,7 +651,7 @@
                 </a>
                 <a href="#" class="btn btn-icon btn-primary project-demo-btn" data-project="Delhi Noida Heritage System"
                   aria-label="Live Demo for Delhi Noida Heritage System">
-                  <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Demo
+                  <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Live Demo
                 </a>
               </div>
             </div>
@@ -565,7 +685,7 @@
                 </a>
                 <a href="#" class="btn btn-icon btn-primary project-demo-btn" data-project="MERN Chat Application"
                   aria-label="Live Demo for MERN Chat App">
-                  <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Demo
+                  <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Live Demo
                 </a>
               </div>
             </div>
@@ -596,70 +716,7 @@
                 </a>
                 <a href="#" class="btn btn-icon btn-primary project-demo-btn" data-project="Hotel Management System"
                   aria-label="Live Demo for Hotel Reservation System">
-                  <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Demo
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 4: Student Grade Tracker -->
-          <article class="glass-card project-card">
-            <div class="project-image-wrapper">
-              <img src="images/project-grade.svg" alt="Student Grade Tracker visual mockup" class="project-img"
-                loading="lazy" width="400" height="200" decoding="async">
-              <div class="project-badge">Java Programming</div>
-            </div>
-            <div class="project-info">
-              <h3 class="project-card-title">Student Grade Tracker</h3>
-              <p class="project-card-desc">
-                Developed an interactive Student Grade Tracker using Java programming, enabling efficient data
-                structures for average calculations and grade distributions.
-              </p>
-              <div class="project-tech-tags">
-                <span class="tech-tag">Java</span>
-                <span class="tech-tag">OOPs</span>
-                <span class="tech-tag">Data Structures</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/EngHarshita" target="_blank" rel="noopener noreferrer"
-                  class="btn btn-icon btn-secondary" aria-label="GitHub Repository for Student Grade Tracker">
-                  <i class="fa-brands fa-github" aria-hidden="true"></i> Repo
-                </a>
-                <a href="#" class="btn btn-icon btn-primary project-demo-btn" data-project="Student Grade Tracker"
-                  aria-label="Live Demo for Student Grade Tracker">
-                  <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Demo
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 5: Cloud Resume Project -->
-          <article class="glass-card project-card">
-            <div class="project-image-wrapper">
-              <img src="images/project-resume.svg" alt="Cloud Resume Project AWS Architecture" class="project-img"
-                loading="lazy" width="400" height="200" decoding="async">
-              <div class="project-badge">Cloud Architecture</div>
-            </div>
-            <div class="project-info">
-              <h3 class="project-card-title">Cloud Resume Project</h3>
-              <p class="project-card-desc">
-                This personal portfolio website, engineered using modern serverless AWS architectures (S3, CloudFront,
-                Route53, API Gateway, Lambda, and DynamoDB).
-              </p>
-              <div class="project-tech-tags">
-                <span class="tech-tag">AWS S3</span>
-                <span class="tech-tag">CloudFront</span>
-                <span class="tech-tag">Route 53</span>
-                <span class="tech-tag">API Gateway &amp; Lambda</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/EngHarshita" target="_blank" rel="noopener noreferrer"
-                  class="btn btn-icon btn-secondary" aria-label="GitHub Repository for Cloud Resume Project">
-                  <i class="fa-brands fa-github" aria-hidden="true"></i> Repo
-                </a>
-                <a href="#" class="btn btn-icon btn-primary project-demo-btn" data-project="Cloud Resume Project"
-                  aria-label="Live Demo for Cloud Resume Project">
-                  <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Demo
+                  <i class="fa-solid fa-up-right-from-square" aria-hidden="true"></i> Live Demo
                 </a>
               </div>
             </div>
@@ -763,28 +820,28 @@
             <form id="contact-form" novalidate>
               <div class="form-row">
                 <div class="form-group">
-                  <label for="form-name">Name</label>
-                  <input type="text" id="form-name" name="name" required placeholder="John Doe" aria-required="true"
+                  <input type="text" id="form-name" name="name" required placeholder=" " aria-required="true"
                     autocomplete="name">
+                  <label for="form-name">Name</label>
                   <span class="form-error-msg" id="name-error">Please enter your name</span>
                 </div>
                 <div class="form-group">
+                  <input type="email" id="form-email" name="email" required placeholder=" " aria-required="true"
+                    autocomplete="email">
                   <label for="form-email">Email</label>
-                  <input type="email" id="form-email" name="email" required placeholder="john@example.com"
-                    aria-required="true" autocomplete="email">
                   <span class="form-error-msg" id="email-error">Please enter a valid email address</span>
                 </div>
               </div>
               <div class="form-group">
-                <label for="form-subject">Subject</label>
-                <input type="text" id="form-subject" name="subject" required placeholder="Job Opportunity / Collab"
+                <input type="text" id="form-subject" name="subject" required placeholder=" "
                   aria-required="true" autocomplete="off">
+                <label for="form-subject">Subject</label>
                 <span class="form-error-msg" id="subject-error">Please enter a subject</span>
               </div>
               <div class="form-group">
-                <label for="form-message">Message</label>
-                <textarea id="form-message" name="message" rows="5" required placeholder="Hi Harshita, let's talk..."
+                <textarea id="form-message" name="message" rows="5" required placeholder=" "
                   aria-required="true" autocomplete="off"></textarea>
+                <label for="form-message">Message</label>
                 <span class="form-error-msg" id="message-error">Please enter your message</span>
               </div>
 

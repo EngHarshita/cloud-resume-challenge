@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1E293B" />
-      <stop offset="100%" stop-color="#0F172A" />
+      <stop offset="0%" stop-color="#FFFDF7" />
+      <stop offset="100%" stop-color="#FFF8E6" />
     </linearGradient>
     <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#C084FC" />
@@ -17,23 +17,23 @@
   <rect width="100%" height="100%" fill="url(#bg)"/>
 
   <!-- Background Connecting Nodes (AI Network Theme) -->
-  <path d="M 100,100 L 200,80 L 300,120 L 400,60 L 500,140" fill="none" stroke="rgba(56, 189, 248, 0.05)" stroke-width="2"/>
-  <path d="M 80,250 L 180,280 L 350,220 L 420,320 L 520,260" fill="none" stroke="rgba(99, 102, 241, 0.05)" stroke-width="2"/>
+  <path d="M 100,100 L 200,80 L 300,120 L 400,60 L 500,140" fill="none" stroke="rgba(242, 210, 122, 0.2)" stroke-width="2"/>
+  <path d="M 80,250 L 180,280 L 350,220 L 420,320 L 520,260" fill="none" stroke="rgba(242, 210, 122, 0.2)" stroke-width="2"/>
   
-  <circle cx="200" cy="80" r="4" fill="#38BDF8" opacity="0.2"/>
-  <circle cx="300" cy="120" r="5" fill="#6366F1" opacity="0.2"/>
-  <circle cx="400" cy="60" r="4" fill="#38BDF8" opacity="0.2"/>
-  <circle cx="180" cy="280" r="5" fill="#6366F1" opacity="0.2"/>
-  <circle cx="350" cy="220" r="6" fill="#38BDF8" opacity="0.2"/>
+  <circle cx="200" cy="80" r="4" fill="#38BDF8" opacity="0.3"/>
+  <circle cx="300" cy="120" r="5" fill="#6366F1" opacity="0.3"/>
+  <circle cx="400" cy="60" r="4" fill="#38BDF8" opacity="0.3"/>
+  <circle cx="180" cy="280" r="5" fill="#6366F1" opacity="0.3"/>
+  <circle cx="350" cy="220" r="6" fill="#38BDF8" opacity="0.3"/>
   
   <!-- ERP Central Concept -->
   <!-- AI Neural Network Brain Symbol left side -->
-  <g transform="translate(100, 110)" filter="drop-shadow(0 10px 15px rgba(0,0,0,0.3))">
+  <g transform="translate(100, 110)" filter="drop-shadow(0 10px 15px rgba(242,210,122,0.15))">
     <!-- Left hemisphere -->
-    <path d="M 80,40 C 40,40 30,70 30,90 C 30,120 50,130 80,140 C 80,140 80,40 80,40 Z" fill="url(#skyGrad)" opacity="0.75" />
+    <path d="M 80,40 C 40,40 30,70 30,90 C 30,120 50,130 80,140 C 80,140 80,40 80,40 Z" fill="url(#skyGrad)" opacity="0.8" />
     <!-- Right hemisphere -->
-    <path d="M 80,40 C 120,40 130,70 130,90 C 130,120 110,130 80,140 C 80,140 80,40 80,40 Z" fill="url(#purpleGrad)" opacity="0.75" />
-    <line x1="80" y1="40" x2="80" y2="140" stroke="#0F172A" stroke-width="3"/>
+    <path d="M 80,40 C 120,40 130,70 130,90 C 130,120 110,130 80,140 C 80,140 80,40 80,40 Z" fill="url(#purpleGrad)" opacity="0.8" />
+    <line x1="80" y1="40" x2="80" y2="140" stroke="#FFFDF7" stroke-width="3"/>
     
     <!-- Circuits -->
     <circle cx="60" cy="70" r="3" fill="#FFFFFF"/>
@@ -41,55 +41,55 @@
     <circle cx="50" cy="100" r="3" fill="#FFFFFF"/>
     <circle cx="110" cy="100" r="3" fill="#FFFFFF"/>
     
-    <path d="M 60,70 L 80,85 L 100,70" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.5"/>
-    <path d="M 50,100 L 80,105 L 110,100" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.5"/>
+    <path d="M 60,70 L 80,85 L 100,70" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.6"/>
+    <path d="M 50,100 L 80,105 L 110,100" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.6"/>
 
-    <text x="80" y="165" fill="#E2E8F0" font-family="Poppins, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">AI COGNITIVE ENGINE</text>
+    <text x="80" y="165" fill="#1F1F1F" font-family="Poppins, sans-serif" font-size="12" font-weight="bold" text-anchor="middle">AI COGNITIVE ENGINE</text>
   </g>
 
   <!-- Enterprise Panels right side -->
   <!-- Finance Panel -->
-  <rect x="330" y="80" width="200" height="95" rx="10" fill="#1E293B" stroke="rgba(255,255,255,0.06)" stroke-width="1.5" filter="drop-shadow(0 8px 12px rgba(0,0,0,0.15))"/>
-  <path d="M 330,110 L 530,110" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/>
+  <rect x="330" y="80" width="200" height="95" rx="10" fill="#FFFFFF" stroke="#F2D27A" stroke-width="1.5" filter="drop-shadow(0 8px 12px rgba(242,210,122,0.1))"/>
+  <path d="M 330,110 L 530,110" stroke="#F2D27A" stroke-width="1.5"/>
   <circle cx="350" cy="95" r="5" fill="#38BDF8"/>
-  <text x="365" y="99" fill="#E2E8F0" font-family="Poppins, sans-serif" font-size="11" font-weight="bold">FINANCIAL MODULE</text>
+  <text x="365" y="99" fill="#1F1F1F" font-family="Poppins, sans-serif" font-size="11" font-weight="bold">FINANCIAL MODULE</text>
   
   <!-- Mini Chart inside Finance Panel -->
-  <rect x="350" y="125" width="60" height="35" rx="4" fill="#0F172A"/>
+  <rect x="350" y="125" width="60" height="35" rx="4" fill="#FFF8E6" stroke="#F2D27A" stroke-width="1"/>
   <text x="380" y="145" fill="#10B981" font-family="Poppins, sans-serif" font-size="11" text-anchor="middle" font-weight="bold">+$48K</text>
   
   <path d="M 425,155 L 445,135 L 465,145 L 485,125 L 505,130" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
   <circle cx="505" cy="130" r="3" fill="#38BDF8"/>
 
   <!-- Operations Panel -->
-  <rect x="330" y="195" width="200" height="95" rx="10" fill="#1E293B" stroke="rgba(255,255,255,0.06)" stroke-width="1.5" filter="drop-shadow(0 8px 12px rgba(0,0,0,0.15))"/>
-  <path d="M 330,225 L 530,225" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/>
+  <rect x="330" y="195" width="200" height="95" rx="10" fill="#FFFFFF" stroke="#F2D27A" stroke-width="1.5" filter="drop-shadow(0 8px 12px rgba(242,210,122,0.1))"/>
+  <path d="M 330,225 L 530,225" stroke="#F2D27A" stroke-width="1.5"/>
   <circle cx="350" cy="210" r="5" fill="#818CF8"/>
-  <text x="365" y="214" fill="#E2E8F0" font-family="Poppins, sans-serif" font-size="11" font-weight="bold">RESOURCE SUPPLY</text>
+  <text x="365" y="214" fill="#1F1F1F" font-family="Poppins, sans-serif" font-size="11" font-weight="bold">RESOURCE SUPPLY</text>
   
   <!-- Circular Progress Bar inside operations -->
-  <circle cx="370" cy="260" r="18" fill="none" stroke="#334155" stroke-width="4"/>
+  <circle cx="370" cy="260" r="18" fill="none" stroke="#FFF8E6" stroke-width="4"/>
   <circle cx="370" cy="260" r="18" fill="none" stroke="#818CF8" stroke-width="4" stroke-dasharray="80 113" stroke-linecap="round"/>
-  <text x="370" y="264" fill="#FFFFFF" font-family="Poppins, sans-serif" font-size="9" text-anchor="middle" font-weight="bold">72%</text>
+  <text x="370" y="264" fill="#1F1F1F" font-family="Poppins, sans-serif" font-size="9" text-anchor="middle" font-weight="bold">72%</text>
 
   <!-- Horizontal Stats Rows -->
-  <rect x="405" y="240" width="110" height="8" rx="2" fill="#334155"/>
-  <rect x="405" y="255" width="85" height="8" rx="2" fill="#334155"/>
-  <rect x="405" y="270" width="95" height="8" rx="2" fill="#334155"/>
+  <rect x="405" y="240" width="110" height="8" rx="2" fill="#FFEFC2"/>
+  <rect x="405" y="255" width="85" height="8" rx="2" fill="#FFEFC2"/>
+  <rect x="405" y="270" width="95" height="8" rx="2" fill="#FFEFC2"/>
 
   <!-- ERP Connective Rings -->
-  <circle cx="300" cy="200" r="15" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-  <line x1="230" y1="160" x2="285" y2="190" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="3 3"/>
-  <line x1="330" y1="160" x2="310" y2="190" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="3 3"/>
-  <line x1="330" y1="210" x2="315" y2="205" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="300" cy="200" r="15" fill="none" stroke="rgba(242,210,122,0.3)" stroke-width="1"/>
+  <line x1="230" y1="160" x2="285" y2="190" stroke="rgba(242,210,122,0.3)" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="330" y1="160" x2="310" y2="190" stroke="rgba(242,210,122,0.3)" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="330" y1="210" x2="315" y2="205" stroke="rgba(242,210,122,0.3)" stroke-width="1" stroke-dasharray="3 3"/>
 
   <!-- Spring / cloud symbols -->
   <g transform="translate(50, 310)">
-    <rect x="0" y="0" width="110" height="28" rx="14" fill="#1E293B" stroke="#818CF8" stroke-width="1"/>
+    <rect x="0" y="0" width="110" height="28" rx="14" fill="#FFFFFF" stroke="#818CF8" stroke-width="1.5"/>
     <text x="55" y="18" fill="#818CF8" font-family="Poppins, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">SPRING BOOT</text>
   </g>
   <g transform="translate(180, 310)">
-    <rect x="0" y="0" width="100" height="28" rx="14" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
-    <text x="50" y="18" fill="#38BDF8" font-family="Poppins, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">RESTful API</text>
+    <rect x="0" y="0" width="100" height="28" rx="14" fill="#FFFFFF" stroke="#38BDF8" stroke-width="1.5"/>
+    <text x="55" y="18" fill="#38BDF8" font-family="Poppins, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">RESTful API</text>
   </g>
 </svg>

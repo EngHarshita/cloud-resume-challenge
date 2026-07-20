@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1E293B" />
-      <stop offset="100%" stop-color="#0F172A" />
+      <stop offset="0%" stop-color="#FFFDF7" />
+      <stop offset="100%" stop-color="#FFF8E6" />
     </linearGradient>
     <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#38BDF8" />
@@ -18,60 +18,60 @@
   <rect width="100%" height="100%" fill="url(#bg)"/>
   
   <!-- Decorative Grid -->
-  <path d="M 0,50 L 600,50 M 0,100 L 600,100 M 0,150 L 600,150 M 0,200 L 600,200 M 0,250 L 600,250 M 0,300 L 600,300 M 0,350 L 600,350" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
-  <path d="M 100,0 L 100,400 M 200,0 L 200,400 M 300,0 L 300,400 M 400,0 L 400,400 M 500,0 L 500,400" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+  <path d="M 0,50 L 600,50 M 0,100 L 600,100 M 0,150 L 600,150 M 0,200 L 600,200 M 0,250 L 600,250 M 0,300 L 600,300 M 0,350 L 600,350" stroke="rgba(242,210,122,0.15)" stroke-width="1"/>
+  <path d="M 100,0 L 100,400 M 200,0 L 200,400 M 300,0 L 300,400 M 400,0 L 400,400 M 500,0 L 500,400" stroke="rgba(242,210,122,0.15)" stroke-width="1"/>
 
   <!-- Hotel App UI Mockup -->
   <!-- Main Window -->
-  <rect x="50" y="40" width="500" height="320" rx="10" fill="#1E293B" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+  <rect x="50" y="40" width="500" height="320" rx="10" fill="#FFFFFF" stroke="#F2D27A" stroke-width="2"/>
   
   <!-- Window Header Bar -->
-  <path d="M 50,70 L 550,70" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+  <path d="M 50,70 L 550,70" stroke="#F2D27A" stroke-width="2"/>
   <!-- Window Controls -->
   <circle cx="75" cy="55" r="6" fill="#EF4444"/>
   <circle cx="95" cy="55" r="6" fill="#F59E0B"/>
   <circle cx="115" cy="55" r="6" fill="#10B981"/>
   
-  <text x="300" y="58" fill="#94A3B8" font-family="Poppins, sans-serif" font-size="12" text-anchor="middle" font-weight="bold">Hotel Management Dashboard</text>
+  <text x="300" y="58" fill="#1F1F1F" font-family="Poppins, sans-serif" font-size="12" text-anchor="middle" font-weight="bold">Hotel Management Dashboard</text>
 
   <!-- Sidebar -->
-  <rect x="50" y="70" width="120" height="290" fill="#0F172A" opacity="0.5"/>
-  <line x1="170" y1="70" x2="170" y2="360" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <rect x="50" y="70" width="120" height="290" fill="#FFF8E6" opacity="0.8"/>
+  <line x1="170" y1="70" x2="170" y2="360" stroke="#F2D27A" stroke-width="1"/>
   <!-- Sidebar Menu Items -->
   <rect x="60" y="90" width="100" height="20" rx="4" fill="url(#grad1)" opacity="0.8"/>
-  <rect x="60" y="125" width="80" height="12" rx="3" fill="#334155"/>
-  <rect x="60" y="150" width="85" height="12" rx="3" fill="#334155"/>
-  <rect x="60" y="175" width="70" height="12" rx="3" fill="#334155"/>
-  <rect x="60" y="200" width="90" height="12" rx="3" fill="#334155"/>
+  <rect x="60" y="125" width="80" height="12" rx="3" fill="#FFEFC2"/>
+  <rect x="60" y="150" width="85" height="12" rx="3" fill="#FFEFC2"/>
+  <rect x="60" y="175" width="70" height="12" rx="3" fill="#FFEFC2"/>
+  <rect x="60" y="200" width="90" height="12" rx="3" fill="#FFEFC2"/>
 
   <!-- Room Grid (Cards) -->
   <!-- Card 1 (Booked - Sky gradient) -->
-  <rect x="195" y="95" width="100" height="110" rx="8" fill="#1E293B" stroke="url(#grad1)" stroke-width="1.5"/>
-  <text x="245" y="120" fill="#38BDF8" font-family="Poppins, sans-serif" font-size="12" text-anchor="middle" font-weight="bold">Room 101</text>
-  <rect x="210" y="135" width="70" height="8" rx="2" fill="#334155"/>
-  <rect x="210" y="150" width="50" height="8" rx="2" fill="#334155"/>
+  <rect x="195" y="95" width="100" height="110" rx="8" fill="#FFFFFF" stroke="url(#grad1)" stroke-width="1.5"/>
+  <text x="245" y="120" fill="#0284C7" font-family="Poppins, sans-serif" font-size="12" text-anchor="middle" font-weight="bold">Room 101</text>
+  <rect x="210" y="135" width="70" height="8" rx="2" fill="#F3F4F6"/>
+  <rect x="210" y="150" width="50" height="8" rx="2" fill="#F3F4F6"/>
   <rect x="210" y="175" width="70" height="18" rx="4" fill="#0284C7"/>
   <text x="245" y="188" fill="#FFFFFF" font-family="Poppins, sans-serif" font-size="9" text-anchor="middle" font-weight="bold">BOOKED</text>
 
   <!-- Card 2 (Available - Indigo gradient) -->
-  <rect x="315" y="95" width="100" height="110" rx="8" fill="#1E293B" stroke="url(#grad2)" stroke-width="1.5"/>
-  <text x="365" y="120" fill="#818CF8" font-family="Poppins, sans-serif" font-size="12" text-anchor="middle" font-weight="bold">Room 102</text>
-  <rect x="330" y="135" width="70" height="8" rx="2" fill="#334155"/>
-  <rect x="330" y="150" width="50" height="8" rx="2" fill="#334155"/>
+  <rect x="315" y="95" width="100" height="110" rx="8" fill="#FFFFFF" stroke="url(#grad2)" stroke-width="1.5"/>
+  <text x="365" y="120" fill="#4F46E5" font-family="Poppins, sans-serif" font-size="12" text-anchor="middle" font-weight="bold">Room 102</text>
+  <rect x="330" y="135" width="70" height="8" rx="2" fill="#F3F4F6"/>
+  <rect x="330" y="150" width="50" height="8" rx="2" fill="#F3F4F6"/>
   <rect x="330" y="175" width="70" height="18" rx="4" fill="#4F46E5"/>
   <text x="365" y="188" fill="#FFFFFF" font-family="Poppins, sans-serif" font-size="9" text-anchor="middle" font-weight="bold">AVAILABLE</text>
 
   <!-- Card 3 (Cleaning - Yellow border) -->
-  <rect x="435" y="95" width="100" height="110" rx="8" fill="#1E293B" stroke="#F59E0B" stroke-width="1"/>
-  <text x="485" y="120" fill="#F59E0B" font-family="Poppins, sans-serif" font-size="12" text-anchor="middle" font-weight="bold">Room 103</text>
-  <rect x="450" y="135" width="70" height="8" rx="2" fill="#334155"/>
-  <rect x="450" y="150" width="50" height="8" rx="2" fill="#334155"/>
+  <rect x="435" y="95" width="100" height="110" rx="8" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1"/>
+  <text x="485" y="120" fill="#D97706" font-family="Poppins, sans-serif" font-size="12" text-anchor="middle" font-weight="bold">Room 103</text>
+  <rect x="450" y="135" width="70" height="8" rx="2" fill="#F3F4F6"/>
+  <rect x="450" y="150" width="50" height="8" rx="2" fill="#F3F4F6"/>
   <rect x="450" y="175" width="70" height="18" rx="4" fill="#D97706"/>
   <text x="485" y="188" fill="#FFFFFF" font-family="Poppins, sans-serif" font-size="9" text-anchor="middle" font-weight="bold">CLEANING</text>
 
   <!-- Bottom Analytics Graph in app -->
-  <rect x="195" y="225" width="340" height="115" rx="8" fill="#0F172A" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-  <text x="210" y="245" fill="#E2E8F0" font-family="Poppins, sans-serif" font-size="11" font-weight="bold">Monthly Occupancy Rate</text>
+  <rect x="195" y="225" width="340" height="115" rx="8" fill="#FFFFFF" stroke="#F2D27A" stroke-width="1"/>
+  <text x="210" y="245" fill="#1F1F1F" font-family="Poppins, sans-serif" font-size="11" font-weight="bold">Monthly Occupancy Rate</text>
   
   <!-- Graph Lines -->
   <path d="M 220,315 L 250,290 L 280,300 L 310,260 L 340,270 L 370,245 L 400,265 L 430,235 L 460,250 L 490,230 L 520,240" fill="none" stroke="url(#grad1)" stroke-width="3" stroke-linecap="round"/>
@@ -79,9 +79,9 @@
   
   <!-- Java Coffee Cup Badge overlay -->
   <g transform="translate(500, 310)">
-    <circle cx="25" cy="25" r="28" fill="#1E293B" stroke="url(#grad2)" stroke-width="2"/>
-    <path d="M 17,29 Q 18,17 33,17 M 21,29 Q 22,19 33,19 M 14,29 L 34,29 A 6,6 0 0 1 29,35 L 19,35 A 6,6 0 0 1 14,29 Z" fill="none" stroke="#E2E8F0" stroke-width="2" stroke-linecap="round"/>
-    <path d="M 29,29 A 3,3 0 0 1 32,32 A 3,3 0 0 1 29,35 Z" fill="none" stroke="#E2E8F0" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="25" cy="25" r="28" fill="#FFFFFF" stroke="url(#grad2)" stroke-width="2"/>
+    <path d="M 17,29 Q 18,17 33,17 M 21,29 Q 22,19 33,19 M 14,29 L 34,29 A 6,6 0 0 1 29,35 L 19,35 A 6,6 0 0 1 14,29 Z" fill="none" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 29,29 A 3,3 0 0 1 32,32 A 3,3 0 0 1 29,35 Z" fill="none" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round"/>
     <path d="M 20,13 Q 23,8 20,5 M 25,13 Q 28,8 25,5" fill="none" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round"/>
   </g>
 </svg>

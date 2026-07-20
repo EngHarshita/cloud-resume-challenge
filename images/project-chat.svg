@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1E293B" />
-      <stop offset="100%" stop-color="#0F172A" />
+      <stop offset="0%" stop-color="#FFFDF7" />
+      <stop offset="100%" stop-color="#FFF8E6" />
     </linearGradient>
     <linearGradient id="indigoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#6366F1" />
@@ -13,7 +13,7 @@
       <stop offset="100%" stop-color="#0284C7" />
     </linearGradient>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.3"/>
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#F2D27A" flood-opacity="0.2"/>
     </filter>
   </defs>
 
@@ -22,29 +22,29 @@
   <!-- Chat Screen Mock (Mobile Device) -->
   <g transform="translate(195, 30)" filter="url(#shadow)">
     <!-- Device Frame -->
-    <rect width="210" height="340" rx="20" fill="#0F172A" stroke="rgba(255, 255, 255, 0.08)" stroke-width="3"/>
+    <rect width="210" height="340" rx="20" fill="#FFFFFF" stroke="#F2D27A" stroke-width="3"/>
     
     <!-- Notch -->
-    <rect x="75" y="0" width="60" height="15" rx="7" fill="#000000"/>
+    <rect x="75" y="0" width="60" height="15" rx="7" fill="#F2D27A"/>
     
     <!-- Header inside device -->
-    <rect x="0" y="15" width="210" height="40" fill="#1E293B" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    <rect x="0" y="15" width="210" height="40" fill="#FFF8E6" stroke="#F2D27A" stroke-width="1"/>
     <circle cx="30" cy="35" r="12" fill="url(#indigoGrad)"/>
     <text x="30" y="39" fill="#FFFFFF" font-family="Poppins, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">HP</text>
     
-    <text x="50" y="32" fill="#E2E8F0" font-family="Poppins, sans-serif" font-size="10" font-weight="bold">Harshita Pal</text>
+    <text x="50" y="32" fill="#1F1F1F" font-family="Poppins, sans-serif" font-size="10" font-weight="bold">Harshita Pal</text>
     <text x="50" y="44" fill="#10B981" font-family="Poppins, sans-serif" font-size="7" font-weight="bold">online</text>
     
     <!-- Audio/Video Icons -->
-    <circle cx="165" cy="35" r="8" fill="#2D3748" opacity="0.6"/>
-    <circle cx="185" cy="35" r="8" fill="#2D3748" opacity="0.6"/>
+    <circle cx="165" cy="35" r="8" fill="#FFEFC2" opacity="0.8"/>
+    <circle cx="185" cy="35" r="8" fill="#FFEFC2" opacity="0.8"/>
 
     <!-- Chat Messages Area -->
     <!-- Message 1 (Incoming - Left) -->
-    <path d="M 20,80 A 10,10 0 0,1 30,70 L 120,70 A 10,10 0 0,1 130,80 L 130,95 A 10,10 0 0,1 120,105 L 30,105 A 10,10 0 0,1 20,95 Z" fill="#1E293B" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-    <rect x="32" y="80" width="80" height="6" rx="1.5" fill="#E2E8F0" opacity="0.8"/>
-    <rect x="32" y="92" width="60" height="6" rx="1.5" fill="#E2E8F0" opacity="0.8"/>
-    <text x="120" y="100" fill="#94A3B8" font-family="Poppins, sans-serif" font-size="6">10:04 AM</text>
+    <path d="M 20,80 A 10,10 0 0,1 30,70 L 120,70 A 10,10 0 0,1 130,80 L 130,95 A 10,10 0 0,1 120,105 L 30,105 A 10,10 0 0,1 20,95 Z" fill="#FFF8E6" stroke="#F2D27A" stroke-width="1"/>
+    <rect x="32" y="80" width="80" height="6" rx="1.5" fill="#1F1F1F" opacity="0.7"/>
+    <rect x="32" y="92" width="60" height="6" rx="1.5" fill="#1F1F1F" opacity="0.7"/>
+    <text x="120" y="100" fill="#777777" font-family="Poppins, sans-serif" font-size="6">10:04 AM</text>
 
     <!-- Message 2 (Outgoing - Right) -->
     <path d="M 80,130 A 10,10 0 0,1 90,120 L 180,120 A 10,10 0 0,1 190,130 L 190,145 A 10,10 0 0,1 180,155 L 90,155 A 10,10 0 0,1 80,145 Z" fill="url(#skyGrad)" opacity="0.9"/>
@@ -53,14 +53,14 @@
     <text x="180" y="150" fill="#E2E8F0" font-family="Poppins, sans-serif" font-size="6">10:05 AM</text>
 
     <!-- Message 3 (Incoming - Left) -->
-    <path d="M 20,180 A 10,10 0 0,1 30,170 L 140,170 A 10,10 0 0,1 150,180 L 150,205 A 10,10 0 0,1 140,215 L 30,215 A 10,10 0 0,1 20,205 Z" fill="#1E293B" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-    <rect x="32" y="180" width="100" height="6" rx="1.5" fill="#E2E8F0" opacity="0.8"/>
-    <rect x="32" y="192" width="90" height="6" rx="1.5" fill="#E2E8F0" opacity="0.8"/>
-    <rect x="32" y="204" width="55" height="6" rx="1.5" fill="#E2E8F0" opacity="0.8"/>
+    <path d="M 20,180 A 10,10 0 0,1 30,170 L 140,170 A 10,10 0 0,1 150,180 L 150,205 A 10,10 0 0,1 140,215 L 30,215 A 10,10 0 0,1 20,205 Z" fill="#FFF8E6" stroke="#F2D27A" stroke-width="1"/>
+    <rect x="32" y="180" width="100" height="6" rx="1.5" fill="#1F1F1F" opacity="0.7"/>
+    <rect x="32" y="192" width="90" height="6" rx="1.5" fill="#1F1F1F" opacity="0.7"/>
+    <rect x="32" y="204" width="55" height="6" rx="1.5" fill="#1F1F1F" opacity="0.7"/>
 
     <!-- Typing Indicator -->
     <g transform="translate(20, 230)">
-      <circle cx="15" cy="10" r="10" fill="#1E293B" opacity="0.6"/>
+      <circle cx="15" cy="10" r="10" fill="#FFFDF7" stroke="#F2D27A" stroke-width="1"/>
       <circle cx="10" cy="10" r="2" fill="#38BDF8">
         <animate attributeName="opacity" values="0.2;1;0.2" dur="1s" repeatCount="indefinite"/>
       </circle>
@@ -73,9 +73,9 @@
     </g>
 
     <!-- Bottom input bar -->
-    <rect x="0" y="295" width="210" height="45" fill="#1E293B" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-    <rect x="15" y="305" width="145" height="25" rx="12.5" fill="#0F172A" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-    <text x="30" y="321" fill="#475569" font-family="Poppins, sans-serif" font-size="8">Type a message...</text>
+    <rect x="0" y="295" width="210" height="45" fill="#FFF8E6" stroke="#F2D27A" stroke-width="1"/>
+    <rect x="15" y="305" width="145" height="25" rx="12.5" fill="#FFFFFF" stroke="#F2D27A" stroke-width="1"/>
+    <text x="30" y="321" fill="#777777" font-family="Poppins, sans-serif" font-size="8">Type a message...</text>
     <circle cx="185" cy="317" r="12" fill="url(#skyGrad)"/>
     <!-- Send Arrow -->
     <path d="M 181,317 L 190,317 M 186,313 L 190,317 L 186,321" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
